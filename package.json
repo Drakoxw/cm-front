@@ -7,6 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "create": "ng g c layout/navBar",
+    "createS": "ng g s shared/services/citas",
+    "createP": "ng g pipe shared/pipe/safeTest",
+    "createG": "ng generate guard shared/guards/servicio",
+    "createModule": "ng generate module modules/home",
     "e2e": "ng e2e"
   },
   "private": true,
