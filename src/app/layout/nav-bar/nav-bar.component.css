@@ -1,7 +1,33 @@
 .cont {
   height: 100vh;
-  width: 3rem;
-  background-color: blue;
+  width: 4rem;
+  background-color: #002a51;
   display: flex;
   flex-direction: column;
+}
+ul {
+  margin: auto;
+  padding: 0!important;
+}
+.selected {
+  color: white;
+}
+
+li a {
+  color: #856de2;
+}
+li a:hover {
+  color: white;
+  font-size: 140%;
+}
+
+.span_tittle{
+  position: absolute;
+  left: 75px;
+  color: #002a51;
+  display: none;
+}
+
+li a:hover ~ .span_tittle{
+  display: block;
 }

@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
+  opcionVer:number;
 
-  constructor() { }
+  constructor() {
+    this.opcionVer = 1;
+   }
 
   ngOnInit(): void {
   }
