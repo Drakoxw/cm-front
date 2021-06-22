@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { DashboradComponent } from './dashborad/dashborad.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { SubRoutingModule } from '../sub-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    DashboradComponent
+    DashboradComponent,
   ],
   imports: [
-    CommonModule
+    SharedModule,
+    SubRoutingModule
   ]
 })
 export class HomeModule { }

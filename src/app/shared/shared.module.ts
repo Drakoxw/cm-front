@@ -7,12 +7,15 @@ import * as fromComponents from './components';
 
 @NgModule({
   imports: [
+
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule
   ],
-  declarations: [...fromComponents.Components],
+  declarations: [
+    ...fromComponents.Components
+  ],
   exports: [
     FormsModule,
     ReactiveFormsModule,

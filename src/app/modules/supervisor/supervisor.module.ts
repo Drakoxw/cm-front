@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageSupervisorComponent } from './page-supervisor/page-supervisor.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -9,7 +10,7 @@ import { PageSupervisorComponent } from './page-supervisor/page-supervisor.compo
     PageSupervisorComponent
   ],
   imports: [
-    CommonModule
+    SharedModule
   ]
 })
 export class SupervisorModule { }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { PageVentasComponent } from './page-ventas/page-ventas.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -9,7 +9,7 @@ import { PageVentasComponent } from './page-ventas/page-ventas.component';
     PageVentasComponent
   ],
   imports: [
-    CommonModule
+    SharedModule
   ]
 })
 export class VentasModule { }

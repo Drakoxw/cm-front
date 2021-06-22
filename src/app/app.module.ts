@@ -14,7 +14,7 @@ import { ModulesModule } from './modules/modules.module';
   declarations: [
     AppComponent,
     SkeletorComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
