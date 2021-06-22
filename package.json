@@ -7,10 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "create": "ng g c shared/components/test",
-    "createS": "ng g s data/services/citas",
+    "create": "ng g c modules/sac/pagePagosSAC",
+    "createS": "ng g s data/services/interceptor",
     "createP": "ng g pipe shared/pipe/safeTest",
-    "createG": "ng generate guard shared/guards/servicio",
+    "createG": "ng generate guard data/guards/speech",
     "createModule": "ng generate module modules/home",
     "e2e": "ng e2e"
   },
