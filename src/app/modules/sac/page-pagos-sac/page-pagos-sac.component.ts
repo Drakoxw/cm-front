@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-pagos-sac.component.css']
 })
 export class PagePagosSACComponent implements OnInit {
+  opcionVer:number = 2;
 
   constructor() { }
 

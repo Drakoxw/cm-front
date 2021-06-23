@@ -1,0 +1,13 @@
+.li_link{
+  cursor: pointer;
+  width: 190px;
+  align-items: center;
+  height: 40px;
+  justify-content: center;
+  display: flex;
+}
+
+.li_link:hover, .selected{
+  border-bottom: solid 4px #505050;
+}
+

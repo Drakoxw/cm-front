@@ -6,6 +6,7 @@ import { PageConsultarClientesComponent } from './page-consultar-clientes/page-c
 import { PageVerClienteComponent } from './page-ver-cliente/page-ver-cliente.component';
 import { PageNuevoClienteComponent } from './page-nuevo-cliente/page-nuevo-cliente.component';
 import { PagePagosSACComponent } from './page-pagos-sac/page-pagos-sac.component';
+import { NavBarSACComponent } from './nav-bar-sac/nav-bar-sac.component';
 
 
 
@@ -15,7 +16,8 @@ import { PagePagosSACComponent } from './page-pagos-sac/page-pagos-sac.component
     PageConsultarClientesComponent,
     PageVerClienteComponent,
     PageNuevoClienteComponent,
-    PagePagosSACComponent
+    PagePagosSACComponent,
+    NavBarSACComponent
   ],
   imports: [
     SharedModule

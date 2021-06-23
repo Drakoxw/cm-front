@@ -1,0 +1,16 @@
+.nav{
+  height: 40px;
+  background-color: #fff;
+  border-bottom: solid 2px rgb(136, 136, 136);
+}
+
+.tabla{
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: -3px 7px 11px 2px;
+}
+.table_mod{
+  background-color: #002a51;
+  color: white;
+}

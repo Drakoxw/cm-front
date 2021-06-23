@@ -9,12 +9,14 @@ import { SharedModule } from './shared/shared.module';
 import { SkeletorComponent } from './layout/skeletor/skeletor.component';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { ModulesModule } from './modules/modules.module';
+import { LoginComponent } from './layout/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SkeletorComponent,
     NavBarComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
