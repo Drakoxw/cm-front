@@ -1,25 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SkeletorComponent } from './layout/skeletor/skeletor.component';
+import { LoginComponent } from './layout/login/login.component';
 import { DashboradComponent } from './modules/home/dashborad/dashborad.component';
-import { HomeModule } from './modules/home/home.module';
 
 const routes: Routes = [
   {
-    path: '', component : DashboradComponent,
+    path: '', component: DashboradComponent,
     children: [
       {
         path: '',
         loadChildren: () =>
-          import('./modules/modules.module').then( (m) => m.ModulesModule)
+          import('./modules/modules.module').then((m) => m.ModulesModule)
       }
     ]
   },
+  {
+    path: 'login', component: LoginComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot
-  (routes, {useHash: true})],
+    (routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
