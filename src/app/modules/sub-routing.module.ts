@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageAdminComponent } from './admin/page-admin/page-admin.component';
-import { PageConsultarClientesComponent } from './sac/page-consultar-clientes/page-consultar-clientes.component';
 import { PageNuevoClienteComponent } from './sac/page-nuevo-cliente/page-nuevo-cliente.component';
 import { PagePagosSACComponent } from './sac/page-pagos-sac/page-pagos-sac.component';
 import { PageSACComponent } from './sac/page-sac/page-sac.component';
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path: 'supervisor', component: PageSupervisorComponent },
   { path: 'admin', component: PageAdminComponent},
   { path: 'cliente/:id', component: PageVerClienteComponent},
-  { path: 'listarclientes', component: PageConsultarClientesComponent},
   { path: 'crearcliente', component: PageNuevoClienteComponent},
   { path: 'pagosac', component: PagePagosSACComponent}
 ];

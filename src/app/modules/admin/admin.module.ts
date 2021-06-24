@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { PageAdminComponent } from './page-admin/page-admin.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -9,7 +9,7 @@ import { PageAdminComponent } from './page-admin/page-admin.component';
     PageAdminComponent
   ],
   imports: [
-    CommonModule
+    SharedModule
   ]
 })
 export class AdminModule { }

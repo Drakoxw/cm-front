@@ -7,6 +7,7 @@ import { DatosPersonalesComponent } from './datos-personales/datos-personales.co
 import { LlamadasModalComponent } from './llamadas-modal/llamadas-modal.component';
 import { PagosComponent } from './pagos/pagos.component';
 import { ProspectosPerdidosComponent } from './prospectos-perdidos/prospectos-perdidos.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component'
 
 
 export const Components: any[] = [
@@ -18,6 +19,7 @@ export const Components: any[] = [
   LlamadasModalComponent,
   PagosComponent,
   ProspectosPerdidosComponent,
+  NavBarComponent,
 ];
 
 export * from './alerta-citas/alerta-citas.component';
@@ -28,4 +30,4 @@ export * from './datos-personales/datos-personales.component';
 export * from './llamadas-modal/llamadas-modal.component';
 export * from './pagos/pagos.component';
 export * from './prospectos-perdidos/prospectos-perdidos.component';
-
+export * from './nav-bar/nav-bar.component'

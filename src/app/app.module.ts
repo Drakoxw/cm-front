@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { SkeletorComponent } from './layout/skeletor/skeletor.component';
-import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { ModulesModule } from './modules/modules.module';
 import { LoginComponent } from './layout/login/login.component';
 
@@ -15,7 +14,6 @@ import { LoginComponent } from './layout/login/login.component';
   declarations: [
     AppComponent,
     SkeletorComponent,
-    NavBarComponent,
     LoginComponent,
   ],
   imports: [
