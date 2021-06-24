@@ -110,6 +110,13 @@ ul.social-network li {
   display: inline;
   margin: 0 5px
 }
+
+input:-internal-autofill-selected, #user {
+  appearance: none;
+  background-color: black !important;
+  background-image: none !important;
+  color: -internal-light-dark(white, red);
+}
 /*
 .social-network a.icoFacebook:hover {
   background-color: #3B5998

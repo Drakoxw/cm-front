@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { SkeletorComponent } from './layout/skeletor/skeletor.component';
 import { ModulesModule } from './modules/modules.module';
 import { LoginComponent } from './layout/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './layout/login/login.component';
     ModulesModule,
     CoreModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     {

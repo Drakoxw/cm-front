@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import * as CryptoJS  from 'crypto-js/sha256';
+import { Usuario } from 'src/app/data/models/otros.moldes';
+import { AuthService } from 'src/app/data/services/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -7,23 +12,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  pass!: number;
+  pass!: string;
   user!: string;
+  token!:any;
 
-  constructor() { }
+  constructor(private authSer: AuthService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
   async codificar(){
-    const buffer = new TextEncoder().encode(String(this.pass))
-    const hash = await crypto.subtle.digest('SHA-256', buffer)
-    //const digesHash = Array.from(new Uint8Array(hash))
-    return hash.byteLength
   }
 
   autenticar(){
-    console.log(this.codificar());
+    let x = {
+      password : CryptoJS(this.pass).toString(),
+      user : this.user
+    }
+    const data: Usuario = x;
+    console.log(data);
+
+    this.authSer.login(data).subscribe(
+      res => {
+        this.token = res
+        console.log(res);
+        this.router.navigate([''])
+
+      }
+    )
   }
 
 }
