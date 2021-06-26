@@ -12,35 +12,24 @@
       <table class="table table-striped table-hover ">
         <thead>
           <tr class="table_mod">
-            <th scope="col">#</th>
+            <th scope="col">Id</th>
             <th scope="col">cliente</th>
-            <th scope="col">Telefono Principal</th>
-            <th scope="col">Telefono Casa</th>
+            <th scope="col">Telefono Celular</th>
             <th scope="col">Telefono Trabajo</th>
+            <th scope="col">Telefono Fijo</th>
+            <th scope="col">Telefono Otro</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark Oooto</td>
-            <td>31211</td>
-            <td>47758</td>
-            <td>42323</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark Oooto222</td>
-            <td>31211</td>
-            <td>47758</td>
-            <td>42323</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark 343Oooto</td>
-            <td>31211</td>
-            <td>47758</td>
-            <td>42323</td>
-          </tr>
+            <tr *ngFor="let item of dataClientes" (click)="setId(item.id)">
+              <th scope="row">{{ item.id }}</th>
+              <td>{{ item.nombres }}&nbsp;{{ item.apellidos }}</td>
+              <td>{{ item.telmovil }}</td>
+              <td>{{ item.teltrabajo }}</td>
+              <td>{{ item.telcasa }}</td>
+              <td>{{ item.telotro }}</td>
+            </tr>
         </tbody>
       </table>
     </div>

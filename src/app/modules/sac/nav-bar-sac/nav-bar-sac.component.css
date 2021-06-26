@@ -5,6 +5,7 @@
   height: 40px;
   justify-content: center;
   display: flex;
+  font-weight: 700;
 }
 
 .li_link:hover, .selected{

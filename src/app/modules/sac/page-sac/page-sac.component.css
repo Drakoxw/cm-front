@@ -11,6 +11,8 @@
   background-color: #fff;
   padding: 10px;
   box-shadow: -3px 7px 11px 2px;
+  max-height: 51%;
+  overflow: auto;
 }
 .table_mod{
   background-color: #002a51;

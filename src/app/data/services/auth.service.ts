@@ -1,12 +1,16 @@
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Injectable, EventEmitter } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { Usuario } from '../models/otros.moldes';
+import { Subject, Observable } from 'rxjs';
+import { TokenI, Usuario } from '../models/otros.moldes';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  token$ = new Subject<TokenI>();
+  userLogin: Boolean;
 
   url = environment.URLendP;
 
@@ -20,5 +24,8 @@ export class AuthService {
     return this.http.post(`${this.url}/auth`, authdata);
   }
 
+  getToken$():Observable<TokenI | Object>{
+    return this.token$.asObservable();
+  }
 
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import * as CryptoJS  from 'crypto-js/sha256';
-import { Usuario } from 'src/app/data/models/otros.moldes';
+import { TokenI, Usuario } from 'src/app/data/models/otros.moldes';
 import { AuthService } from 'src/app/data/services/auth.service';
+import * as CryptoJS  from 'crypto-js/sha256';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   user!: string;
   token!:any;
 
-  constructor(private authSer: AuthService,
+  constructor(private authServ: AuthService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -30,17 +30,20 @@ export class LoginComponent implements OnInit {
       password : CryptoJS(this.pass).toString(),
       user : this.user
     }
+    console.log(x);
+
     const data: Usuario = x;
-    console.log(data);
-
-    this.authSer.login(data).subscribe(
-      res => {
-        this.token = res
+    this.authServ.login(data).subscribe(
+      (res: TokenI) => {
         console.log(res);
+        localStorage.setItem('token', res.token)
+        this.authServ.token$.next(res);
+        this.authServ.userLogin = true;
         this.router.navigate([''])
-
       }
     )
   }
+
+
 
 }

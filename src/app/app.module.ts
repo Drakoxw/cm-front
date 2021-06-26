@@ -10,6 +10,8 @@ import { SkeletorComponent } from './layout/skeletor/skeletor.component';
 import { ModulesModule } from './modules/modules.module';
 import { LoginComponent } from './layout/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './data/services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,11 @@ import { FormsModule } from '@angular/forms';
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

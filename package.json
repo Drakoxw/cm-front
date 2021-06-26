@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "create": "ng g c layout/login",
-    "createS": "ng g s data/services/interceptor",
+    "createS": "ng g s data/services/http",
     "createP": "ng g pipe shared/pipe/safeTest",
     "createG": "ng generate guard data/guards/speech",
     "createModule": "ng generate module modules/home",
