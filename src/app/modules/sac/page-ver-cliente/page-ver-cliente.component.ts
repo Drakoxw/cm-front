@@ -13,6 +13,28 @@ export class PageVerClienteComponent implements OnInit {
   id: string;
   dataCliente: ClientModel;
 
+  formClient = {
+    id: null,
+    nombres: '',
+    apellidos: '',
+    telmovil: '',
+    telcasa: '',
+    teltrabajo: '',
+    telotro: '',
+    asignado: 0,
+    zipcode: 0,
+    ciudad: '',
+    estado: '',
+    direccion: '',
+    creadopor: 0,
+    fecha_creacion: '0000-00-00',
+    ocupacion: '',
+    email: '',
+    email2: '',
+    nacimiento: '',
+    status: 0,
+  }
+
   constructor(private router: Router,
               private httpServ: HttpService,
               private activateRoute : ActivatedRoute)
