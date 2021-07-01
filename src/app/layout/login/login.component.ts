@@ -31,10 +31,14 @@ export class LoginComponent implements OnInit {
     }
     Swal.showLoading();
     const data: Usuario = x;
+
     this.authServ.login(data).subscribe(
       (res: TokenI) => {
+
         this.authServ.token$.next(res);
         this.authServ.userLogin = true;
+        console.log(res);
+
         Swal.fire({
           title: 'Autenticado',
           allowOutsideClick: false,
@@ -42,10 +46,9 @@ export class LoginComponent implements OnInit {
           text: 'Autenticación correcta',
           showConfirmButton: false,
           timer: 1000
-        })
-          .then(() => {
-            this.router.navigate(['/']);
-          });
+        }).then(() => {
+          this.router.navigate(['/']);
+        });
       }, err => {
         Swal.fire({
           title: 'Fallo',
@@ -55,5 +58,6 @@ export class LoginComponent implements OnInit {
         this.pass = '';
         this.user = '';
       })
+
   }
 }

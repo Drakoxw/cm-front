@@ -27,5 +27,4 @@ export class AuthService {
   getToken$(): Observable<TokenI> {
     return this.token$.asObservable();
   }
-
 }
