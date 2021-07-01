@@ -24,7 +24,7 @@ export class AuthService {
     return this.http.post(`${this.url}/auth`, authdata);
   }
 
-  getToken$():Observable<TokenI | Object>{
+  getToken$(): Observable<TokenI> {
     return this.token$.asObservable();
   }
 
