@@ -5,38 +5,31 @@ import { DomSanitizer } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class FuncionesComunesService {
-  visualizar_speech: string = '';/////////
-  puerta: number = 0;////////////////////
-  nombre_pros: string;
-  ss: string;
-  hoy = new Date();
 
   constructor(private sanitizer: DomSanitizer) { }
 
-  getDatos() {
-    let data = [this.nombre_pros, this.ss];
-    console.log(data);
-    return data;
-  }
-
-  ordenar(data) {
-    data.sort(function (a, b) {
-      if (a.fechahora < b.fechahora) {
+  /**
+   *
+   * @param data
+   */
+  ordenar(data: any) {
+    data.sort(function (a: any, b: any) {
+      if (a < b) {
         return 1;
       }
-      if (a.fechahora > b.fechahora) {
+      if (a > b) {
         return -1;
       }
       return 0;
     });
   }
 
-  ordenar2(data) {
-    data.sort(function (a, b) {
-      if (a.fechahora > b.fechahora) {
+  ordenar2(data: any) {
+    data.sort(function (a: any, b: any) {
+      if (a > b) {
         return 1;
       }
-      if (a.fechahora < b.fechahora) {
+      if (a < b) {
         return -1;
       }
       return 0;
@@ -72,7 +65,9 @@ export class FuncionesComunesService {
     }
     );
 
-  parseJwt(token) { //parseador de tokens
+
+
+  parseJwt(token: string) { //parseador de tokens
     try {
       return JSON.parse(atob(token.split('.')[1]));
     } catch (e) {

@@ -61,14 +61,11 @@ export interface Campos_adicionales {
   banco: string,
   cv: string,
   compania_movil: string,
-
-  /*  */
   tipo_trabajo: string,
   dia_pago: string,
   dia_llamar: number,
   nota_supervisor: string,
   notas: string,
-
 
   /*  */
   nombre_agent_nota: string

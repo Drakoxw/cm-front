@@ -6,12 +6,13 @@ import { Injectable } from '@angular/core';
 export class MicroTimeService {
 
   /**
-   * propiedad base de libreria
+   * Propiedad base de la libreria
    */
   hoy = new Date();
 
   /**
-   *
+   * Retorna la fecha type string
+   * @returns 'aaaa-mm-dd'
    */
   getFecha(): string {
     let mes: any = this.hoy.getMonth() + 1;
@@ -22,8 +23,8 @@ export class MicroTimeService {
   }
 
   /**
-   *
-   * @returns
+   * Retorna la hora type string
+   * @returns 'hh:mm:ss'
    */
   getHora(): string {
     let min: any = this.hoy.getMinutes();
@@ -38,40 +39,17 @@ export class MicroTimeService {
   }
 
   /**
-   *
-   * @returns
+   * Retorna la fecha completa del inicio del dia
+   * @returns 'aaaa-mm-dd 00:00:00'
    */
   getHoy(): string {
-    return `${this.getFecha()} 00:00:01`;
-  }
-
-  /**
-   *
-   * @param t
-   * @param h
-   * @returns
-   */
-  shoterAlert(t: number, h: string): string {
-    const hoy = this.getFecha()
-
-    let min: any = this.hoy.getMinutes();
-    let hora: any = this.hoy.getHours();
-    if (t > min) {
-      min = min + 60;
-      hora = hora - 1;
-    }
-
-    if (min < 10) min = `0${min}`;
-    if (hora < 10) hora = `0${hora}`;
-    min = min - t;
-    const horaAlarma = `${hora}:${min}`
-    return horaAlarma
+    return `${this.getFecha()} 00:00:00`;
   }
 
 
   /**
-   *
-   * @returns
+   * Retorna un string tipo fecha del inicio del dia de mañana
+   * @returns 'aaaa-mm-dd 00:00:00'
    */
   getTomorrow() {
     let manana = this.toTimeStamp(this.getHoy());
@@ -92,13 +70,13 @@ export class MicroTimeService {
     if (hora < 10) hora = `0${hora}`;
     if (sec < 10) sec = `0${sec}`;
 
-    return `${año}-${mes}-${dia} 00:00:01`;
+    return `${año}-${mes}-${dia} 00:00:00`;
   }
 
   /**
-   *
-   * @param time
-   * @returns
+   * Recibe una fecha tipo string:'aaaa-mm-dd 00:00:00' y lo vuelve formato TimeStamp
+   * @param time Fecha: 'aaaa-mm-dd 00:00:00'
+   * @returns Number: Fecha tipo TimeStamp: 1625170210000
    */
   toTimeStamp(time: string): number {
     let t = new Date(time);
@@ -106,9 +84,9 @@ export class MicroTimeService {
   }
 
   /**
-   *
-   * @param time
-   * @returns
+   * Recibe una fecha formato TimeStamp y lo vuelve tipo string:'aaaa-mm-dd hh:mm:ss'
+   * @param time Number: Fecha tipo TimeStamp: 1625170210000
+   * @returns Fecha: 'aaaa-mm-dd hh:mm:ss'
    */
   fromTimeStamp(time: number) {
     const date = new Date(time);
@@ -116,10 +94,10 @@ export class MicroTimeService {
   }
 
   /**
-   *
-   * @param hora
-   * @param t
-   * @returns
+   *  Genera las horas de las alarmas recibiendo un parametros de minutos
+   * @param hora Hora tipo string: 'hh:mm:ss'
+   * @param t Cantidad de tiempo en minutos para generar la alarma
+   * @returns Hora tipo string: 'hh:mm:ss'
    */
   generateHoraAlarma(hora: string, t: number) {
     let horaT = this.toTimeStamp(hora);
@@ -133,5 +111,4 @@ export class MicroTimeService {
   }
 
 
-  constructor() { }
 }
