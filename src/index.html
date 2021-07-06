@@ -18,25 +18,22 @@
 
 
 <script type="text/javascript">
-  (function(){
-    window.onerror = function (errorMsg, url, lineNumber) {
-      alert(errorMsg + ' ' + lineNumber);
-    };
+  ( () => {
 
-
-    window.console.error = function ($event, more) {
+    window.console.error = ($event, more) => {
       console.log('** Event 🤦‍♂️***', $event);
       console.log('** Trace 👉️***', more);
 
       const data = JSON.stringify({
         text: more.stack
       });
-
+    /*
       const xhr = new XMLHttpRequest();
       xhr.open('POST', 'http://localhost:3001/log'); // <--- //TODO: Aqui colocar la url de tu server
       xhr.setRequestHeader('Content-type', 'application/json');
-      xhr.send(data);
+      xhr.send(data); */
     };
+
   })()
 </script>
 
