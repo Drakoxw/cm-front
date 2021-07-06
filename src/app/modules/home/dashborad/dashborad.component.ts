@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TokenI } from 'src/app/data/models/otros.moldes';
-import { AuthService } from 'src/app/data/services/auth.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-dashborad',
@@ -16,11 +16,7 @@ export class DashboradComponent implements OnInit {
   constructor(private AuthSer: AuthService) { }
 
   ngOnInit(): void {
-    this.token$ = this.AuthSer.getToken$();
-    this.token$.subscribe(token => this.tok = token);
 
-
-    console.log('home', this.tok);
 
   }
 

@@ -48,14 +48,11 @@ export class PageVerClienteComponent implements OnInit {
   }
 
   getCliente(){
-    this.httpServ.getCliente(this.id).subscribe(
-      (res: ClientModel) => {
-        this.dataCliente = res;
-        console.log(res);
-
+    this.httpServ.getCliente(this.id).subscribe( res => {
+      if (!res.error) {
+        this.dataCliente = res.data;
       }
-
-    )
+    });
   }
 
 }

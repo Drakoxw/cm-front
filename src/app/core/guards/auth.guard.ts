@@ -1,29 +1,22 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
+import { API_CONST } from '../../data/constants/api.constants';
 import Swal from 'sweetalert2';
 
-import { FuncionesComunesService } from '../services/funciones-comunes.service';
-import { AuthService } from '../services/auth.service';
+import { FuncionesComunesService } from '../../data/services/funciones-comunes.service';
 import { Observable } from 'rxjs';
-import { TokenI } from '../models/otros.moldes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
   autenticacion: boolean;
-  token$: Observable<TokenI>;
-  tok: TokenI;
 
   constructor(private router: Router,
-    private FuntSer: FuncionesComunesService,
-    private AuthSer: AuthService) { }
+    private FuntSer: FuncionesComunesService) { }
 
   canActivate(): boolean {
-    this.token$ = this.AuthSer.getToken$();
-    this.token$.subscribe(token => this.tok = token);
-
-    console.log('this.tok', this.tok);
+    let tok = localStorage.getItem(API_CONST.TOKEN)
 
     /*  if (this.tok) {
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { API_CONST } from '../../data/constants/api.constants';
 import { TokenI, Usuario } from 'src/app/data/models/otros.moldes';
-import { AuthService } from 'src/app/data/services/auth.service';
 import * as CryptoJS from 'crypto-js/sha256';
 import Swal from 'sweetalert2';
 
@@ -13,9 +14,9 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
 
-  pass!: string;
-  user!: string;
-  token!: any;
+  pass: string;
+  user: string;
+  tok:TokenI;
 
   constructor(private authServ: AuthService,
     private router: Router) { }
@@ -34,18 +35,14 @@ export class LoginComponent implements OnInit {
 
     this.authServ.login(data).subscribe(
       (res: TokenI) => {
-
-        this.authServ.token$.next(res);
-        this.authServ.userLogin = true;
-        console.log(res);
-
+        localStorage.setItem(API_CONST.TOKEN ,res.token)
         Swal.fire({
           title: 'Autenticado',
           allowOutsideClick: false,
           icon: 'success',
           text: 'Autenticación correcta',
           showConfirmButton: false,
-          timer: 1000
+          timer: 1500
         }).then(() => {
           this.router.navigate(['/']);
         });

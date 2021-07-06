@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './data/guards/auth.guard';
 import { LoginComponent } from './layout/login/login.component';
 import { DashboradComponent } from './modules/home/dashborad/dashborad.component';
 
 const routes: Routes = [
   {
-    path: '', component: DashboradComponent, canActivate: [AuthGuard],
+    path: '', component: DashboradComponent,
     children: [
       {
         path: '',
@@ -15,9 +14,8 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path: 'login', component: LoginComponent
-  }
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from '../data/guards/auth.guard';
+import { ROUTES_PATHS } from '../data/constants/routes/inter.routes';
+
+
+
+import { AuthGuard } from '../core/guards/auth.guard';
 import { PageAdminComponent } from './admin/page-admin/page-admin.component';
 import { PageNuevoClienteComponent } from './sac/page-nuevo-cliente/page-nuevo-cliente.component';
 import { PagePagosSACComponent } from './sac/page-pagos-sac/page-pagos-sac.component';
@@ -11,13 +15,13 @@ import { PageVentasComponent } from './ventas/page-ventas/page-ventas.component'
 
 
 const routes: Routes = [
-  { path: 'ventas', component: PageVentasComponent, canActivate: [AuthGuard] },
-  { path: 'sac', component: PageSACComponent, canActivate: [AuthGuard] },
-  { path: 'supervisor', component: PageSupervisorComponent, canActivate: [AuthGuard] },
-  { path: 'admin', component: PageAdminComponent, canActivate: [AuthGuard] },
-  { path: 'cliente/:id', component: PageVerClienteComponent, canActivate: [AuthGuard] },
-  { path: 'crearcliente', component: PageNuevoClienteComponent, canActivate: [AuthGuard] },
-  { path: 'pagosac', component: PagePagosSACComponent, canActivate: [AuthGuard] }
+  { path: ROUTES_PATHS.VENTAS , component: PageVentasComponent, canActivate: [AuthGuard] },
+  { path: ROUTES_PATHS.SAC , component: PageSACComponent, canActivate: [AuthGuard] },
+  { path: ROUTES_PATHS.SUPERV , component: PageSupervisorComponent, canActivate: [AuthGuard] },
+  { path: ROUTES_PATHS.ADMIN , component: PageAdminComponent, canActivate: [AuthGuard] },
+  { path: ROUTES_PATHS.ADDCLIENT , component: PageNuevoClienteComponent, canActivate: [AuthGuard] },
+  { path: ROUTES_PATHS.PAYSAC , component: PagePagosSACComponent, canActivate: [AuthGuard] },
+  { path: `${ROUTES_PATHS.CLIENT}/:id`, component: PageVerClienteComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

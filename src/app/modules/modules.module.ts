@@ -5,6 +5,7 @@ import { HomeModule } from './home/home.module';
 import { SACModule } from './sac/sac.module';
 import { SupervisorModule } from './supervisor/supervisor.module';
 import { VentasModule } from './ventas/ventas.module';
+import { SpeechsModule } from './speechs/speechs.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { VentasModule } from './ventas/ventas.module';
     HomeModule,
     SACModule,
     SupervisorModule,
+    SpeechsModule,
     VentasModule,
     SubRoutingModule
   ]
