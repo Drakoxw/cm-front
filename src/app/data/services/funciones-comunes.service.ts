@@ -9,10 +9,10 @@ export class FuncionesComunesService {
   constructor(private sanitizer: DomSanitizer) { }
 
   /**
-   *
-   * @param data
+   * Meto de Orden Ascendente
+   * @param data de tipo any[]
    */
-  ordenar(data: any) {
+  ordenarAsc(data:[]) {
     data.sort(function (a: any, b: any) {
       if (a < b) {
         return 1;
@@ -23,8 +23,11 @@ export class FuncionesComunesService {
       return 0;
     });
   }
-
-  ordenar2(data: any) {
+  /**
+   * Metodo de Orden Descendente
+   * @param data Array
+   */
+  ordenarDesc(data: []) {
     data.sort(function (a: any, b: any) {
       if (a > b) {
         return 1;
@@ -36,15 +39,22 @@ export class FuncionesComunesService {
     });
   }
 
+  /**
+   * Metodo Asincrono de Archivos a BASE64
+   * @param $event Evento de input tipo File
+   * @returns El archivo en BASE64
+   */
   base64 = async ($event: any) =>
     new Promise((resolve, reject) => {
       try {
-        const unsafeImg = window.URL.createObjectURL($event); // crea un DOMString que contiene una URL que representa al objeto pasado como parámetro.
+        /**
+         * crea un DOMString que contiene una URL que representa al objeto pasado como parámetro.
+         */
+        const unsafeImg = window.URL.createObjectURL($event);
         const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
         const reader = new FileReader();
         reader.readAsDataURL($event);
         reader.onload = () => {
-
           resolve({
             blob: $event,
             image,
@@ -62,12 +72,17 @@ export class FuncionesComunesService {
         console.log(err);
         return null;
       }
-    }
-    );
+    });
 
 
 
-  parseJwt(token: string) { //parseador de tokens
+  /**
+   * Parseador de Token
+   * Si no recibe un string token devuelve un NULL
+   * @param token :string
+   * @returns token parseado
+   */
+  parseJwt(token: string) {
     try {
       return JSON.parse(atob(token.split('.')[1]));
     } catch (e) {

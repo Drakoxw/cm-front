@@ -6,10 +6,10 @@ import { ROUTES_PATHS } from '../data/constants/routes/inter.routes';
 
 import { AuthGuard } from '../core/guards/auth.guard';
 import { PageAdminComponent } from './admin/page-admin/page-admin.component';
-import { PageNuevoClienteComponent } from './sac/page-nuevo-cliente/page-nuevo-cliente.component';
-import { PagePagosSACComponent } from './sac/page-pagos-sac/page-pagos-sac.component';
-import { PageSACComponent } from './sac/page-sac/page-sac.component';
-import { PageVerClienteComponent } from './sac/page-ver-cliente/page-ver-cliente.component';
+import { PageNuevoClienteComponent } from './sac/pages/page-nuevo-cliente/page-nuevo-cliente.component';
+import { PagePagosSACComponent } from './sac/pages/page-pagos-sac/page-pagos-sac.component';
+import { PageSACComponent } from './sac/pages/page-sac/page-sac.component';
+import { PageVerClienteComponent } from './sac/pages/page-ver-cliente/page-ver-cliente.component';
 import { PageSupervisorComponent } from './supervisor/page-supervisor/page-supervisor.component';
 import { PageVentasComponent } from './ventas/page-ventas/page-ventas.component';
 

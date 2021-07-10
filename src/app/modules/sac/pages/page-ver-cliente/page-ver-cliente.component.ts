@@ -47,6 +47,10 @@ export class PageVerClienteComponent implements OnInit {
 
   }
 
+  /**
+   * Trae todo los Clientes
+   * metodo temporal requiere cambios
+   */
   getCliente(){
     this.httpServ.getCliente(this.id).subscribe( res => {
       if (!res.error) {

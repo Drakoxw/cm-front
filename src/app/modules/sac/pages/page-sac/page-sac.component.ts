@@ -11,19 +11,25 @@ import { HttpService } from 'src/app/data/services/http.service';
   styleUrls: ['./page-sac.component.css']
 })
 export class PageSACComponent implements OnInit {
-  opcionVer:number = 1;
-
+  opcionVer:number;
   dataClientes: ClientModel[];
 
   constructor(private httpServ: HttpService,
-              private router : Router) { }
+              private router : Router)
+  {
+    this.opcionVer = 1;
+  }
 
   ngOnInit(): void {
     this.getClientes();
   }
 
+  /**
+   * Trae todo los Clientes
+   * metodo temporal requiere cambios
+   */
   getClientes(){
-    return this.httpServ.getAllClientes().subscribe(res => {
+    this.httpServ.getAllClientes().subscribe(res => {
       if (!res.error) {
         let x = [];
         for (const key in res) {
@@ -35,8 +41,11 @@ export class PageSACComponent implements OnInit {
     });
   }
 
-  setId(id){
-    console.log(id);
+  /**
+   * Metodo de redireción a VerClientes/id
+   * @param id string
+   */
+  setId(id:string){
     this.router.navigateByUrl(`${ROUTES_PATHS.CLIENT}/${id}`);
   }
 

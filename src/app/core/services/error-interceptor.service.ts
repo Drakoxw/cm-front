@@ -11,6 +11,11 @@ export class ErrorInterceptorService implements HttpInterceptor {
 
   constructor(private router: Router) { }
 
+  /**
+   * Interceptor para errores
+   * Incompleto
+   * A espera del endpoint de errores
+   */
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((err) => {

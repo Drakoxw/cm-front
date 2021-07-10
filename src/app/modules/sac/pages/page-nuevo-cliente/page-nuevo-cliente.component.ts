@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-nuevo-cliente.component.css']
 })
 export class PageNuevoClienteComponent implements OnInit {
-  opcionVer:number = 3;
+  opcionVer:number;
 
-  constructor() { }
+  constructor()
+  {
+    this.opcionVer = 3;
+  }
 
   ngOnInit(): void {
   }
