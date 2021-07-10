@@ -5,7 +5,6 @@ export interface ClientModel {
   asignado: number,
   ciudad: string,
   creadopor: number,
-  capacidad_ahorro: number,
   contrato_firmado: number,
   contrato_enviado: number,
   dialibre: string,
@@ -29,7 +28,7 @@ export interface ClientModel {
   reportex3: number,
   salario: number,
   status: number,
-  tipopago: string,
+  plan_mes: number,
   teltrabajo: string,
   telmovil: string,
   telcasa: string,
@@ -38,12 +37,7 @@ export interface ClientModel {
   valor_inscripcion: number,
   valor_mensualidad: number,
   zipcode: number,
-
-
   campos_adicionales: Campos_adicionales,
-
-  sueldoS_Q: string,
-
 }
 export interface Campos_adicionales {
   pago_renta: number,
@@ -58,16 +52,43 @@ export interface Campos_adicionales {
   exp: string,
   nombres_tarjeta: string,
   tipo_tarjeta: number,
+  tipo_papeles: number,
+  capacidad_ahorro: number,
   banco: string,
   cv: string,
-  compania_movil: string,
-  tipo_trabajo: string,
-  dia_pago: string,
-  dia_llamar: number,
-  nota_supervisor: string,
-  notas: string,
+  horariotrabajo: string,
 
   /*  */
-  nombre_agent_nota: string
-
+  tipo_trabajo: string,
+  dia_llamar: string,
+  nota_supervisor: string,
+  notas: string,
+  dia_pagoS: string,
+  dia_pago: number,
+  dia_pago2: number,
+  ahorro_mensual: number,
+  tipopago: string,
+  compania_movil: string,
+  nota_plan_inscripcion: string,
+  puntaje: string,
+  colecciones: string,
+  motivacion: string,
+  acredores: string,
+  acredores2: string,
+  creditos: string,
+  creditos2: string,
+  deudas_pendientes: string,
+  deudas_pendientes2: string,
+  apartamento: string,
+  telwht: string,
+  licencia_exp: string
+  estado: string,
+  cuotas_inscripcion: number,
+  fechas_pagos_inscripcion: [
+    number, string,
+    number, string,
+    number, string,
+    number, string,
+    number, string
+  ]
 }
