@@ -2,7 +2,7 @@
 
 export const ROUTES_PATHS = {
 
-  LOGIN: '/login',
+  LOGIN: 'login',
   VENTAS: 'ventas',
   SAC: 'sac',
   SUPERV: 'supervisor',
