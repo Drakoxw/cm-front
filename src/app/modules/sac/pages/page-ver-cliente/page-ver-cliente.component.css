@@ -1,29 +1,28 @@
 .nav {
   height: 40px;
-  background-color: #a4d1ff;
-  border-bottom: solid 2px rgb(136, 136, 136);
+  color: #d1deec;
+  background-color: #002a52;
+  border-bottom: 2px solid #888;
+  border-left: 2px solid;
 }
 
 .cont {
   height: 100vh;
   overflow: auto;
-  margin-left: -12px;
-  margin-top: 5px;
   width: calc(100% + 12px);
+  padding: 3px;
 }
-
 .perfil{
   height: 100%;
   width: 260px;
-  background-color: #656565;
+  background-color: #85a8cc;
   color: #fff;
 }
 .cont_main{
-  background-color: #daddde;
-
+  background-color: #dbeeff;
 }
 .tt {
-  background-color: #2b2b2b;
+
   padding: 5px;
   padding-top: 0;
 }
@@ -70,8 +69,10 @@
 
 
 .opc{
+  background-color: #002a52;
   padding: 10px;
-  box-shadow: 3px 2px 5px 1px;
+  color: #daddde;
+ /*  box-shadow: 3px 2px 5px 1px; */
 }
 
 .opc span{
