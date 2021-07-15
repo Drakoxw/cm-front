@@ -1,11 +1,4 @@
-/* .main_login{
-  width: 100vw;
-  height: 100vh;
-  background-color: azure;
-  position: fixed;
-  top: 0;
-  right: 0;
-} */
+
 
 .form_cont{
   background-color: beige;
@@ -26,6 +19,12 @@
   background: linear-gradient(to right, #ece6e5, #1565c0)
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
   margin-bottom: 20px;
   border: none
@@ -38,11 +37,9 @@
 .box {
   width: 500px;
   padding: 40px;
-  position: absolute;
   top: 50%;
   left: 50%;
   background: #191919;
-  ;
   text-align: center;
   transition: 0.25s;
   margin-top: 100px

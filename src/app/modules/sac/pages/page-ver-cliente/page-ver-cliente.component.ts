@@ -10,10 +10,10 @@ import { HttpService } from 'src/app/data/services/http.service';
 })
 export class PageVerClienteComponent implements OnInit {
 
+  name:string;
   id: string;
-  dataCliente: ClientModel;
 
-  formClient = {
+  formClient : Partial<ClientModel> = {
     id: null,
     nombres: '',
     apellidos: '',
@@ -54,7 +54,8 @@ export class PageVerClienteComponent implements OnInit {
   getCliente(){
     this.httpServ.getCliente(this.id).subscribe( res => {
       if (!res.error) {
-        this.dataCliente = res.data;
+        this.formClient = res.data;
+        console.log(res.data);
       }
     });
   }
