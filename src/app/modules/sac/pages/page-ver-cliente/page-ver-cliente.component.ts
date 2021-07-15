@@ -60,4 +60,7 @@ export class PageVerClienteComponent implements OnInit {
     });
   }
 
+
+  
+
 }
