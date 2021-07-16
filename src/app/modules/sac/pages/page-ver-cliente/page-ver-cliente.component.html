@@ -8,340 +8,661 @@
 
     <div class="cont d-flex">
       <div class="perfil">
-        <div class="user ">
-          <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="white" class="bi bi-person-square"
-            viewBox="0 0 16 16">
+        <div class="user">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="140"
+            height="140"
+            fill="white"
+            class="bi bi-person-square"
+            viewBox="0 0 16 16"
+          >
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
             <path
-              d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
+              d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"
+            />
           </svg>
         </div>
-        <div class="titulo text-center" >
-          <h3 class="mt-2 tt">{{ formClient.nombres || 'NO NAME' }} {{ formClient.apellidos }}</h3>
+        <div class="titulo text-center">
+          <h3 class="mt-2 tt">{{ nombreCliente || "NO NAME" }}</h3>
         </div>
         <div class="opciones d-flex justify-content-evenly">
           <div class="bton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-              class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-telephone-outbound-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"
+              />
             </svg>
           </div>
           <div class="bton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-journal-x"
-              viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M6.146 6.146a.5.5 0 0 1 .708 0L8 7.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 8l1.147 1.146a.5.5 0 0 1-.708.708L8 8.707 6.854 9.854a.5.5 0 0 1-.708-.708L7.293 8 6.146 6.854a.5.5 0 0 1 0-.708z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-journal-x"
+              viewBox="0 0 16 16"
+            >
               <path
-                d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                fill-rule="evenodd"
+                d="M6.146 6.146a.5.5 0 0 1 .708 0L8 7.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 8l1.147 1.146a.5.5 0 0 1-.708.708L8 8.707 6.854 9.854a.5.5 0 0 1-.708-.708L7.293 8 6.146 6.854a.5.5 0 0 1 0-.708z"
+              />
               <path
-                d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"
+              />
+              <path
+                d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"
+              />
             </svg>
           </div>
           <div class="bton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-              class="bi bi-folder2-open" viewBox="0 0 16 16">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-folder2-open"
+              viewBox="0 0 16 16"
+            >
               <path
-                d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14V3.5zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5V6zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7H1.633z" />
+                d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14V3.5zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5V6zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7H1.633z"
+              />
             </svg>
           </div>
           <div class="bton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-              class="bi bi-envelope-open-fill" viewBox="0 0 16 16">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-envelope-open-fill"
+              viewBox="0 0 16 16"
+            >
               <path
-                d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z" />
+                d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z"
+              />
             </svg>
           </div>
           <div class="bton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-              class="bi bi-calendar-date" viewBox="0 0 16 16">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-calendar-date"
+              viewBox="0 0 16 16"
+            >
               <path
-                d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"
+              />
               <path
-                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+              />
             </svg>
           </div>
         </div>
       </div>
 
-      <div class="cont_main w100">
-        <div class="form-row">
-
+      <div class="cont_main w100 h100">
+        <div class="form-row h100">
           <div class="opc w100">
-            <span> Editar
-              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+            <span>
+              Editar
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="green"
+                class="bi bi-pencil-square"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
+                />
               </svg>
             </span>
-
-
-
           </div>
 
+          <div class="body_form">
+            <form [formGroup]="dataForm">
+              <!-- -----------------------------------------basico----------------------------------------- -->
 
+              <div class="row g-3 mt-4 p-2">
+                <h5 class="sub_t">Datos Básicos</h5>
 
+                <div class="col-auto">
+                  <label for="nombres" class="font-w">Nombres</label>
+                  <input
+                    type="text"
+                    name="nombres"
+                    class="form-control"
+                    formControlName="nombres"
+                  />
+                </div>
 
+                <div class="col-auto">
+                  <label for="apellidos" class="font-w">Apellidos</label>
+                  <input
+                    type="text"
+                    name="apellidos"
+                    class="form-control"
+                    formControlName="apellidos"
+                  />
+                </div>
 
-          <div class="row g-3 mt-3 p-2">
+                <div class="col-auto">
+                  <label for="status" class="font-w">Estatus</label>
+                  <select
+                    name="status"
+                    id="statusSel"
+                    class="form-control"
+                    formControlName="status"
+                  >
+                    <option value="1" name="status">Cliente Activo</option>
+                    <option value="2" name="status">Inactivo</option>
+                    <option value="3" name="status">Suspendido</option>
+                    <option value="4" name="status">Rojo</option>
+                    <option value="5" name="status">Virgen</option>
+                    <option value="6" name="status">Prospecto</option>
+                  </select>
+                </div>
 
-<!--             <div class="col-auto">
-              <label for="id" class="font-w">ID</label>
-              <input type="text" name="id" class="form-control" [(ngModel)]="formClient.id" readonly />
-            </div>
- -->
-            <div class="col-auto">
-              <label for="nombres" class="font-w">Nombres</label>
-              <input type="text" id="nombres" name="nombres" class="form-control" pattern="^^[a-zA-ZÑñ '.]*$"
-                minlength="2" maxlength="50" [(ngModel)]="formClient.nombres" #nombres="ngModel" />
-              <div class="errores" *ngIf="nombres.invalid && nombres.dirty">
-                <div style="display: flex" *ngIf="nombres.errors.pattern">
-                  <small><b>Solo</b> letras y simbolos( ' . )</small>
+                <div class="col-auto">
+                  <label for="ocupacion" class="font-w">Ocupación</label>
+                  <input
+                    type="text"
+                    name="ocupacion"
+                    class="form-control"
+                    formControlName="ocupacion"
+                  />
+                </div>
+
+                <div class="col-auto">
+                  <label for="email" class="font-w">Email</label>
+                  <input
+                    type="text"
+                    name="email"
+                    class="form-control"
+                    formControlName="email"
+                  />
+                </div>
+
+                <div class="col-auto">
+                  <label for="nacimiento" class="font-w">Nacimiento</label>
+                  <input
+                    type="date"
+                    name="nacimiento"
+                    class="form-control"
+                    formControlName="nacimiento"
+                  />
                 </div>
               </div>
-            </div>
+              <!-- -----------------------------------------lugar----------------------------------------- -->
+              <div class="row g-3 mt-4 p-2">
+                <h5 class="sub_t">Datos de Ubicación</h5>
 
-            <div class="col-auto">
-              <label for="apellidos" class="font-w">Apellidos</label>
-              <input type="text" id="apellidos" name="apellidos" class="form-control" pattern="^^[a-zA-ZÑñ '.]*$"
-                minlength="4" maxlength="100" [(ngModel)]="formClient.apellidos" #apellidos="ngModel" />
-              <div class="errores" *ngIf="apellidos.invalid && apellidos.dirty">
-                <div *ngIf="apellidos.errors.pattern">
-                  <small><b>Solo</b> letras y simbolos ( ' . )</small>
+                <div class="col-auto">
+                  <label for="zipcode" class="font-w">Zip code</label>
+                  <input
+                    type="text"
+                    name="zipcode"
+                    class="form-control"
+                    formControlName="zipcode"
+                  />
                 </div>
-              </div>
-            </div>
 
-            <div class="col-auto">
-              <label for="status" class="font-w">status</label>
-              <select name="status" id="statusSel" class="form-control" [(ngModel)]="formClient.status">
-                <option value="1" name="status">Cliente Activo</option>
-                <option value="2" name="status">Inactivo</option>
-                <option value="3" name="status">Suspendido</option>
-                <option value="4" name="status">Rojo</option>
-                <option value="5" name="status">Virgen</option>
-                <option value="6" name="status">Prospecto</option>
-              </select>
-            </div>
-
-            <div class="col-auto">
-              <label for="ocupacion" class=" font-w"> Ocupación</label>
-              <input type="text" id="ocupacion" name="ocupacion" class="form-control" maxlength="150" [(ngModel)]="formClient.ocupacion"
-                #ocupacionI="ngModel" />
-              <div class="errores" *ngIf="ocupacionI.invalid && ocupacionI.dirty">
-                <div *ngIf="ocupacionI.errors.maxlength">
-                  <small>Máximo <b>150</b> caracteres</small>
+                <div class="col-auto">
+                  <label for="ciudad" class="font-w">Ciudad</label>
+                  <input
+                    type="text"
+                    name="ciudad"
+                    class="form-control"
+                    formControlName="ciudad"
+                  />
                 </div>
-              </div>
-            </div>
 
-
-            <div class="telefonos row g-3">
-
-
-              <div class="col-auto mt-0">
-                <label for="telmovil" class="font-w">Telefono de Registro <span class="req">*</span></label>
-                <input required type="tel" name="telmovil" class="form-control" pattern="^(\d{10})" maxlength="10"
-                  minlength="10" [(ngModel)]="formClient.telmovil" #telmovil="ngModel" />
-                <div class="errores" *ngIf="telmovil.invalid && (telmovil.dirty || telmovil.touched)">
-                  <div *ngIf="telmovil.errors.required">
-                    <small>Este telefono es Obligatorio</small>
-                  </div>
-                  <div *ngIf="telmovil.errors.minlength || telmovil.errors.maxlength">
-                    <small>El telefono requiere de <b>10</b> digitos!</small>
-                  </div>
-                  <div *ngIf="
-                      !telmovil.errors.minlength &&
-                      !telmovil.errors.maxlength &&
-                      telmovil.errors.pattern
-                    ">
-                    <small><b>NO</b> se permiten letras ni simbolos!</small>
-                  </div>
+                <div class="col-auto">
+                  <label for="direccion" class="font-w">Dirección</label>
+                  <input
+                    type="text"
+                    name="direccion"
+                    class="form-control"
+                    formControlName="direccion"
+                  />
                 </div>
-              </div>
 
-
-
-              <div class="col-auto mt-0">
-                <label for="telcasa" class="font-w">Telefono casa</label>
-                <input type="tel" name="telcasa" class="form-control" pattern="^(\d{10})" maxlength="10" minlength="10"
-                  [(ngModel)]="formClient.telcasa" #telcasa="ngModel" />
-                <div class="errores" *ngIf="telcasa.invalid && telcasa.dirty">
-                  <div *ngIf="
-                      (telcasa.errors.minlength || telcasa.errors.maxlength) &&
-                      !telcasa.touched
-                    ">
-                    <small>El telefono requiere de <b>10</b> digitos!</small>
-                  </div>
-                  <div *ngIf="
-                      !telcasa.errors.minlength &&
-                      !telcasa.errors.maxlength &&
-                      telcasa.errors.pattern
-                    ">
-                    <small><b>NO</b> se permiten letras ni simbolos!</small>
-                  </div>
+                <div class="col-auto">
+                  <label for="apartamento" class="font-w">Apartamento</label>
+                  <input
+                    type="text"
+                    name="apartamento"
+                    class="form-control"
+                    formControlName="apartamento"
+                  />
                 </div>
-              </div>
 
-
-              <div class="col-auto mt-0">
-                <label for="teltrabajo" class="font-w">Telefono trabajo</label>
-                <input type="tel" name="teltrabajo" class="form-control" pattern="^(\d{10})" maxlength="10" minlength="10"
-                  [(ngModel)]="formClient.teltrabajo" #teltrabajo="ngModel" />
-                <div class="errores" *ngIf="teltrabajo.invalid && teltrabajo.dirty">
-                  <div *ngIf="
-                      (teltrabajo.errors.minlength || teltrabajo.errors.maxlength) &&
-                      !teltrabajo.touched
-                    ">
-                    <small>El telefono requiere de <b>10</b> digitos!</small>
-                  </div>
-                  <div *ngIf="
-                      !teltrabajo.errors.minlength &&
-                      !teltrabajo.errors.maxlength &&
-                      teltrabajo.errors.pattern
-                    ">
-                    <small><b>NO</b> se permiten letras ni simbolos!</small>
-                  </div>
-                </div>
-              </div>
-
-
-<!-- //////////////////////////////////////////////////////////////////////////////////////////  -->
-              <div class="col-auto mt-0">
-                <label for="telcasa" class="font-w">Whastsapp</label>
-                <input type="tel" name="telcasa" class="form-control" pattern="^(\d{10})" maxlength="10" minlength="10"
-                  [(ngModel)]="formClient.telcasa" #telcasa="ngModel" />
-                <div class="errores" *ngIf="telcasa.invalid && telcasa.dirty">
-                  <div *ngIf="
-                      (telcasa.errors.minlength || telcasa.errors.maxlength) &&
-                      !telcasa.touched
-                    ">
-                    <small>El telefono requiere de <b>10</b> digitos!</small>
-                  </div>
-                  <div *ngIf="
-                      !telcasa.errors.minlength &&
-                      !telcasa.errors.maxlength &&
-                      telcasa.errors.pattern
-                    ">
-                    <small><b>NO</b> se permiten letras ni simbolos!</small>
-                  </div>
-                </div>
-              </div>
-<!-- //////////////////////////////////////////////////////////////////////////////////////////  -->
-
-
-              <div class="col-auto mt-0">
-                <label for="telotro" class="font-w">Telefono otro</label>
-                <input type="tel" name="telotro" class="form-control" pattern="^(\d{10})" maxlength="10" minlength="10"
-                  [(ngModel)]="formClient.telotro" #telotro="ngModel" />
-                <div class="errores" *ngIf="telotro.invalid && telotro.dirty">
-                  <div *ngIf="telotro.errors.minlength || telotro.errors.maxlength">
-                    <small>El telefono requiere de <b>10</b> digitos!</small>
-                  </div>
-                  <div *ngIf="
-                      !telotro.errors.minlength &&
-                      !telotro.errors.maxlength &&
-                      telotro.errors.pattern
-                    ">
-                    <small><b>NO</b> se permiten letras ni simbolos!</small>
-                  </div>
+                <div class="col-auto">
+                  <label for="estado" class="font-w">Estado</label>
+                  <select
+                    name="estado"
+                    id="estadoSel"
+                    class="form-control"
+                    formControlName="estado"
+                  >
+                    <option value="TX" name="estado">Texas</option>
+                    <option value="MS" name="estado">Massachusetts</option>
+                    <option value="NY" name="estado">New York</option>
+                    <option value="CT" name="estado">Connecticut</option>
+                    <option value="NJ" name="estado">New Jersy</option>
+                    <option value="CO" name="estado">Colorado</option>
+                    <option value="RI" name="estado">Rhode Island</option>
+                    <option value="MN" name="estado">Minnesota</option>
+                    <option value="KY" name="estado">Kentucky</option>
+                    <option value="PR" name="estado">Puerto Rico</option>
+                  </select>
                 </div>
               </div>
 
+              <!-- --------------------------------------telefonos---------------------------------------------------- -->
+              <div class="row g-3 mt-4 p-2">
+                <h5 class="sub_t">Telefonos</h5>
 
+                <div class="col-auto">
+                  <label for="telmovil" class="font-w"
+                    >Telefono de Registro</label
+                  >
+                  <input
+                    type="text"
+                    name="telmovil"
+                    class="form-control"
+                    formControlName="telmovil"
+                  />
+                </div>
 
-            </div>
+                <div class="col-auto">
+                  <label for="telcasa" class="font-w">Telefono Casa</label>
+                  <input
+                    type="text"
+                    name="telcasa"
+                    class="form-control"
+                    formControlName="telcasa"
+                  />
+                </div>
 
+                <div class="col-auto">
+                  <label for="teltrabajo" class="font-w"
+                    >Telefono Trabajo</label
+                  >
+                  <input
+                    type="text"
+                    name="teltrabajo"
+                    class="form-control"
+                    formControlName="teltrabajo"
+                  />
+                </div>
 
+                <div class="col-auto">
+                  <label for="telmovil" class="font-w">Telefono Whastapp</label>
+                  <input
+                    type="text"
+                    name="telmovil"
+                    class="form-control"
+                    formControlName="telwht"
+                  />
+                </div>
 
-
-
-
-
-
-
-
-
-
-            <div class="col-auto">
-              <label for="asignado" class="font-w">Agente Asignado</label><!-- !!! -->
-              <select id="asignado" name="asignado" class="form-control" maxlength="5" readonly
-                [(ngModel)]="formClient.asignado">
-                <!--   <option *ngFor="let item of usuariosList" value="{{ item.id }}">
-                  {{ item.nombre }} {{ item.apellido }}
-                </option> -->
-              </select>
-            </div>
-
-
-            <div class="col-auto">
-              <label for="zipcode" class="font-w">Zip Code</label>
-              <input type="text" name="zipcode" class="form-control" pattern="^(\d{4,8})"
-                [(ngModel)]="formClient.zipcode" #zipcode="ngModel" />
-              <div class="errores" *ngIf="zipcode.invalid && zipcode.dirty">
-                <div *ngIf="zipcode.errors.pattern">
-                  <small>Solo <b>números</b> 4 a 8 dígitos</small>
+                <div class="col-auto">
+                  <label for="telmovil" class="font-w">Otro Telefono</label>
+                  <input
+                    type="text"
+                    name="telmovil"
+                    class="form-control"
+                    formControlName="telotro"
+                  />
                 </div>
               </div>
-            </div>
 
-            <div class="col-auto">
-              <label for="ciudad" class="font-w">Ciudad</label>
-              <input type="text" name="ciudad" class="form-control" [(ngModel)]="formClient.ciudad" #ciudad="ngModel" />
-            </div>
+              <!-- --------------------------------------plan pagos---------------------------------------------------- -->
+              <div class="row g-3 mt-4 p-2">
+                <h5 class="sub_t">Datos de pago</h5>
 
-            <div class="col-auto">
-              <label for="direccion" class="font-w">Dirección</label>
-              <input type="text" name="direccion" class="form-control" [(ngModel)]="formClient.direccion"
-                #direccion="ngModel" />
-            </div>
+                <div class="col-auto">
+                  <label for="valor_mensualidad" class="font-w"
+                    >Valor a pagar Mensualidad</label
+                  >
+                  <select
+                    name="valor_mensualidad"
+                    id="valor_mensualidad"
+                    class="form-control"
+                    formControlName="valor_mensualidad"
+                  >
+                    <option value="499" name="valor_mensualidad">$ 499</option>
+                    <option value="399" name="valor_mensualidad">$ 399</option>
+                    <option value="299" name="valor_mensualidad">$ 299</option>
+                    <option value="265" name="valor_mensualidad">$ 265</option>
+                    <option value="249" name="valor_mensualidad">$ 249</option>
+                    <option value="229" name="valor_mensualidad">$ 229</option>
+                    <option value="199,5" name="valor_mensualidad">
+                      $ 199,5
+                    </option>
+                  </select>
+                </div>
 
-            <div class="col-auto">
-              <label for="email" class="font-w">Email Principal</label>
-              <input size="20" name="email" autocomplete="on" class="form-control" type="email" id="email"
-                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-                [(ngModel)]="formClient.email" #email="ngModel" />
-              <div class="errores" *ngIf="email.invalid && email.dirty">
-                <div *ngIf="email.errors.pattern">
-                  <small>No es <b>Email</b> Válido</small>
+                <div class="col-auto">
+                  <label for="plan_mes" class="font-w"
+                    >Plan de pagos x Mes</label
+                  >
+                  <select
+                    name="plan_mes"
+                    id="plan_mes"
+                    class="form-control"
+                    formControlName="plan_mes"
+                  >
+                    <option value="3" name="plan_mes">3 Meses</option>
+                    <option value="6" name="plan_mes">6 Meses</option>
+                    <option value="10" name="plan_mes">10 Meses</option>
+                    <option value="12" name="plan_mes">12 Meses</option>
+                    <option value="15" name="plan_mes">15 Meses</option>
+                    <option value="18" name="plan_mes">18 Meses</option>
+                    <option value="24" name="plan_mes">2 Años</option>
+                    <option value="36" name="plan_mes">3 Años</option>
+                    <option value="48" name="plan_mes">4 Años</option>
+                    <option value="60" name="plan_mes">5 Años</option>
+                    <option value="72" name="plan_mes">6 Años</option>
+                  </select>
+                </div>
+
+                <div class="col-auto">
+                  <label for="nota_plan_inscripcion" class="font-w"
+                    >Notas Plan Inscripción <span class="req">!!!!</span></label
+                  >
+                  <input
+                    type="text"
+                    name="nota_plan_inscripcion"
+                    class="form-control"
+                    formControlName="nota_plan_inscripcion"
+                  />
+                </div>
+
+                <div class="col-auto">
+                  <label for="valor_inscripcion" class="font-w"
+                    >Valor a pagar de Inscripción</label
+                  >
+                  <select
+                    name="valor_inscripcion"
+                    id="valor_inscripcionSel"
+                    class="form-control"
+                    formControlName="valor_inscripcion"
+                  >
+                    <option value="1000" name="valor_inscripcion">
+                      $ 1000
+                    </option>
+                    <option value="800" name="valor_inscripcion">$ 800</option>
+                    <option value="700" name="valor_inscripcion">$ 700</option>
+                    <option value="500" name="valor_inscripcion">$ 500</option>
+                    <option value="300" name="valor_inscripcion">$ 300</option>
+                  </select>
+                </div>
+
+                <div class="col-auto">
+                  <label for="cuotas_inscripcion" class="font-w"
+                    >Cuotas de Inscripción</label
+                  >
+                  <select
+                    name="cuotas_inscripcion"
+                    class="form-control"
+                    formControlName="cuotas_inscripcion"
+                  >
+                    <option value="1" name="cuotas_inscripcion">1 Cuota</option>
+                    <option value="2" name="cuotas_inscripcion">
+                      2 Cuotas
+                    </option>
+                    <option value="3" name="cuotas_inscripcion">
+                      3 Cuotas
+                    </option>
+                    <option value="4" name="cuotas_inscripcion">
+                      4 Cuotas
+                    </option>
+                    <option value="5" name="cuotas_inscripcion">
+                      5 Cuotas
+                    </option>
+                  </select>
+                </div>
+
+              </div>
+              <!-- --------------------------------------ingresos y gastos---------------------------------------------------- -->
+              <div class="row g-3 mt-4 p-2">
+                <h5 class="sub_t">Ingresos - Egresos</h5>
+
+                <div class="col-auto">
+                  <label for="nota_plan_inscripcion" class="font-w">Tipo de Ingreso</label>
+                  <select name="tipo_ingreso" id="tipo_ingreso" class="form-control" formControlName="tipo_ingreso">
+                    <option value=1 name="tipo_ingreso">Nomina</option>
+                    <option value=2 name="tipo_ingreso">Cuenta propia</option>
+                    <option value=3 name="tipo_ingreso">Cheque del gobierno</option>
+                    <option value=4 name="tipo_ingreso">Tax ID</option>
+                  </select>
+                </div>
+
+                <div class="col-auto">
+                  <label for="nota_plan_inscripcion" class="font-w">Salario</label>
+                  <input type="text" name="nota_plan_inscripcion" class="form-control" formControlName="nota_plan_inscripcion"/>
+                </div>
+
+                <div class="col-auto">
+                  <label for="nota_plan_inscripcion" class="font-w">Sueldo Sem/Quin/Mens</label>
+                  <select name="sueldoS_Q" id="sueldoS_Q" class="form-control" formControlName="sueldoS_Q">
+                    <option value=1 name="sueldoS_Q">Semanal</option>
+                    <option value=2 name="sueldoS_Q">Quincenal</option>
+                    <option value=3 name="sueldoS_Q">Mensual</option>
+                  </select>
+                </div>
+
+                <div class="col-auto">
+                  <label for="nota_plan_inscripcion" class="font-w">Día Pago</label>
+                  <select name="dia_pagoS" id="dia_pago" class="form-control" formControlName="dia_pagoS">
+                    <option value="1" name="dia_pagoS">Domingo</option>
+                    <option value="2" name="dia_pagoS">Lunes</option>
+                    <option value="3" name="dia_pagoS">Martes</option>
+                    <option value="4" name="dia_pagoS">Miércoles</option>
+                    <option value="5" name="dia_pagoS">Jueves</option>
+                    <option value="6" name="dia_pagoS">Viernes</option>
+                    <option value="7" name="dia_pagoS">Sábado</option>
+                  </select>
+                </div>
+
+                <div class="col-auto">
+                  <label for="nota_plan_inscripcion" class="font-w">Día Primer Pago</label>
+                  <input type="tex" name="nota_plan_inscripcion" class="form-control" formControlName="nota_plan_inscripcion"/>
+                </div>
+
+                <div class="col-auto">
+                  <label for="nota_plan_inscripcion" class="font-w">Día Segundo Pago</label>
+                  <input type="text" name="nota_plan_inscripcion" class="form-control" formControlName="nota_plan_inscripcion"/>
+                </div>
+
+              <!-- ---------------------------------***************gastos*******************---------------------------------------------- -->
+              <div class="col-auto">
+                <label for="nota_plan_inscripcion" class="font-w req">Pago Renta</label>
+                <input type="text" name="nota_plan_inscripcion" class="form-control" formControlName="nota_plan_inscripcion"/>
+              </div>
+
+              <div class="col-auto">
+                <label for="nota_plan_inscripcion" class="font-w req">Capacidad de Ahorro</label>
+                <input type="text" name="nota_plan_inscripcion" class="form-control" formControlName="nota_plan_inscripcion"/>
+              </div>
+
+
+              <div class="col-auto">
+                <label for="nota_plan_inscripcion" class="font-w req">Acredores</label>
+                <input type="text" name="nota_plan_inscripcion" class="form-control" formControlName="nota_plan_inscripcion"/>
+              </div>
+
+
+              <div class="col-auto">
+                <label for="nota_plan_inscripcion" class="font-w req">Creditos</label>
+                <input type="text" name="nota_plan_inscripcion" class="form-control" formControlName="nota_plan_inscripcion"/>
+              </div>
+
+
+              <div class="col-auto">
+                <label for="nota_plan_inscripcion" class="font-w req">Deudas</label>
+                <input type="text" name="nota_plan_inscripcion" class="form-control" formControlName="nota_plan_inscripcion"/>
+              </div>
+
+
+              </div>
+
+
+              <!-- --------------------------------------horarios---------------------------------------------------- -->
+              <div class="row g-3 mt-4 p-2">
+                <h5 class="sub_t">Horarios</h5>
+
+                <div class="col-auto">
+                  <label for="valor_mensualidad" class="font-w"
+                    >Valor a pagar Mensualidad</label
+                  >
+                  <select
+                    name="valor_mensualidad"
+                    id="valor_mensualidad"
+                    class="form-control"
+                    formControlName="valor_mensualidad"
+                  >
+                    <option value="499" name="valor_mensualidad">$ 499</option>
+                    <option value="399" name="valor_mensualidad">$ 399</option>
+                    <option value="299" name="valor_mensualidad">$ 299</option>
+                    <option value="265" name="valor_mensualidad">$ 265</option>
+                    <option value="249" name="valor_mensualidad">$ 249</option>
+                    <option value="229" name="valor_mensualidad">$ 229</option>
+                    <option value="199,5" name="valor_mensualidad">
+                      $ 199,5
+                    </option>
+                  </select>
+                </div>
+
+                <div class="col-auto">
+                  <label for="plan_mes" class="font-w"
+                    >Plan de pagos x Mes</label
+                  >
+                  <select
+                    name="plan_mes"
+                    id="plan_mes"
+                    class="form-control"
+                    formControlName="plan_mes"
+                  >
+                    <option value="3" name="plan_mes">3 Meses</option>
+                    <option value="6" name="plan_mes">6 Meses</option>
+                    <option value="10" name="plan_mes">10 Meses</option>
+                    <option value="12" name="plan_mes">12 Meses</option>
+                    <option value="15" name="plan_mes">15 Meses</option>
+                    <option value="18" name="plan_mes">18 Meses</option>
+                    <option value="24" name="plan_mes">2 Años</option>
+                    <option value="36" name="plan_mes">3 Años</option>
+                    <option value="48" name="plan_mes">4 Años</option>
+                    <option value="60" name="plan_mes">5 Años</option>
+                    <option value="72" name="plan_mes">6 Años</option>
+                  </select>
+                </div>
+
+                <div class="col-auto">
+                  <label for="nota_plan_inscripcion" class="font-w"
+                    >Notas Plan Inscripción <span class="req">!!!!</span></label
+                  >
+                  <input
+                    type="text"
+                    name="nota_plan_inscripcion"
+                    class="form-control"
+                    formControlName="nota_plan_inscripcion"
+                  />
+                </div>
+
+                <div class="col-auto">
+                  <label for="valor_inscripcion" class="font-w"
+                    >Valor a pagar de Inscripción</label
+                  >
+                  <select
+                    name="valor_inscripcion"
+                    id="valor_inscripcionSel"
+                    class="form-control"
+                    formControlName="valor_inscripcion"
+                  >
+                    <option value="1000" name="valor_inscripcion">
+                      $ 1000
+                    </option>
+                    <option value="800" name="valor_inscripcion">$ 800</option>
+                    <option value="700" name="valor_inscripcion">$ 700</option>
+                    <option value="500" name="valor_inscripcion">$ 500</option>
+                    <option value="300" name="valor_inscripcion">$ 300</option>
+                  </select>
+                </div>
+
+                <div class="col-auto">
+                  <label for="cuotas_inscripcion" class="font-w"
+                    >Cuotas de Inscripción</label
+                  >
+                  <select
+                    name="cuotas_inscripcion"
+                    class="form-control"
+                    formControlName="cuotas_inscripcion"
+                  >
+                    <option value="1" name="cuotas_inscripcion">1 Cuota</option>
+                    <option value="2" name="cuotas_inscripcion">
+                      2 Cuotas
+                    </option>
+                    <option value="3" name="cuotas_inscripcion">
+                      3 Cuotas
+                    </option>
+                    <option value="4" name="cuotas_inscripcion">
+                      4 Cuotas
+                    </option>
+                    <option value="5" name="cuotas_inscripcion">
+                      5 Cuotas
+                    </option>
+                  </select>
                 </div>
               </div>
-            </div>
+              <!-- --------------------------------------Datos Adicionales---------------------------------------------------- -->
+              <div class="row g-3 mt-4 p-2">
+                <h5 class="sub_t">Datos Adicionales</h5>
 
-            <div class="col-auto">
-              <label for="email2" class="font-w">Email Secundario</label>
-              <input size="20" id="email2" type="email" name="email2" autocomplete="on" class="form-control"
-                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-                [(ngModel)]="formClient.email2" #email2="ngModel" />
-              <div class="errores" *ngIf="email2.invalid && email2.dirty">
-                <div *ngIf="email2.errors.pattern">
-                  <small>No es <b>Email</b> Válido</small>
+                <div class="col-auto">
+                  <label for="carro" class="font-w req">Carro</label>
+                  <select name="carro" id="carro" class="form-control" formControlName="carro">
+                    <option value="1" name="carro">No</option>
+                    <option value="2" name="carro">Si</option>
+                  </select>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-auto">
-              <label for="nacimiento" class="font-w">Fecha de Nacimiento</label>
-              <input size="20" type="date" id="nacimiento" name="nacimiento" autocomplete="on" class="form-control"
-                pattern="^(\d{4})(\/|-)(0[1-9]|1[0-2])(\/|-)([0-2][0-9]|3[0-1])$" [(ngModel)]="formClient.nacimiento"
-                #nacimiento="ngModel" />
-              <div class="errores" *ngIf="nacimiento.invalid && nacimiento.dirty">
-                <div *ngIf="nacimiento.errors.pattern">
-                  <small>Formato de <b>Fecha</b> no válido</small>
+                <div class="col-auto">
+                  <label for="casa" class="font-w req">Casa</label>
+                  <select name="casa" id="casa" class="form-control" formControlName="casa">
+                    <option value="1" name="casa">No</option>
+                    <option value="2" name="casa">Si</option>
+                  </select>
                 </div>
+
               </div>
-            </div>
 
 
-            <div class="col-auto">
-              <label for="fecha_creacion" class="font-w">Fecha de Creación</label>
-              <input type="datetime" name="fecha_creacion" class="form-control" [(ngModel)]="formClient.fecha_creacion"
-                readonly />
-            </div>
+              <br>
+              <br>
 
+            </form>
           </div>
         </div>
       </div>
     </div>
-
   </div>
+</div>

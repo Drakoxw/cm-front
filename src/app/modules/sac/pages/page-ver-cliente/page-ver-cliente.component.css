@@ -15,7 +15,7 @@
 .perfil{
   height: 100%;
   width: 260px;
-  background-color: #85a8cc;
+  background-color: #184883;
   color: #fff;
 }
 .cont_main{
@@ -77,4 +77,27 @@
 
 .opc span{
   font-size: 23px;
+}
+.row{
+  position: relative;
+  border: solid 1px;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.sub_t{
+  display: flex;
+  width: auto;
+  height: 27px;
+  position: absolute;
+  top: -27px;
+  border: solid 1px;
+  border-radius: 5px;
+  background-color: #dbeeff;
+}
+
+.body_form{
+  height: calc(100% - 56px);
+  overflow: auto;
+  overflow-x: hidden;
 }
