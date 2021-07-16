@@ -1,8 +1,7 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ClientModel } from 'src/app/data/models/clientes.models';
+import { REGEX } from 'src/app/data/constants/regex';
 import { HttpService } from 'src/app/data/services/http.service';
 
 @Component({
@@ -16,18 +15,14 @@ export class PageVerClienteComponent implements OnInit {
   id: string;
   nombreCliente: string;
 
-  clienteForm = this.fg.group({
-
-  })
-
   dataForm: FormGroup;
   constructor(private router: Router,
-              private fg: FormBuilder,
               private httpServ: HttpService,
               private activateRoute : ActivatedRoute)
   {
     this.id = activateRoute.snapshot.params['id'];
     this.dataForm = this.createFormG();
+
   }
 
   ngOnInit(): void {
@@ -36,8 +31,8 @@ export class PageVerClienteComponent implements OnInit {
 
   createFormG(){
     return new FormGroup({
-      nombres: new FormControl(''),
-      apellidos: new FormControl(''),
+      nombres: new FormControl('', [Validators.pattern(REGEX.NOMBRES), Validators.minLength(3)]),
+      apellidos: new FormControl('', [Validators.pattern(REGEX.APELLIDOS), Validators.minLength(4)]),
       status: new FormControl(''),
       ocupacion: new FormControl(''),
       nacimiento: new FormControl(''),
@@ -62,14 +57,8 @@ export class PageVerClienteComponent implements OnInit {
       cuotas_inscripcion: new FormControl(''),
       fechas_pagos_inscripcion: new FormControl(''),
 
-
-
-
-
     })
   }
-
-
 
   /**
    * Trae todo los Clientes
@@ -113,5 +102,10 @@ export class PageVerClienteComponent implements OnInit {
       }
     });
   }
+
+  log(ev){
+    console.log(ev);
+  }
+
 
 }

@@ -144,23 +144,30 @@
 
                 <div class="col-auto">
                   <label for="nombres" class="font-w">Nombres</label>
-                  <input
-                    type="text"
-                    name="nombres"
-                    class="form-control"
-                    formControlName="nombres"
-                  />
+                  <input type="text" name="nombres" class="form-control" formControlName="nombres" autocapitalize="words" autocomplete="none"/>
+                  <div class="alertas" *ngIf="dataForm.get('nombres').invalid && (dataForm.get('nombres').dirty || dataForm.get('nombres').touched)">
+                    <div class="regex" *ngIf="dataForm.get('nombres').hasError('pattern')">
+                      Solo se aceptan letras
+                    </div>
+                    <div class="min_max" *ngIf="dataForm.get('nombres').hasError('minlength')">
+                      El minimo es 3 max 50
+                    </div>
+                  </div>
                 </div>
 
                 <div class="col-auto">
                   <label for="apellidos" class="font-w">Apellidos</label>
                   <input
+                  style="text-transform: capitalize;"
                     type="text"
                     name="apellidos"
                     class="form-control"
                     formControlName="apellidos"
+                    autocapitalize="words"
+                    autocomplete="none" (ngModelChange)="log($event)"
                   />
                 </div>
+
 
                 <div class="col-auto">
                   <label for="status" class="font-w">Estatus</label>
@@ -335,7 +342,7 @@
               </div>
 
               <!-- --------------------------------------plan pagos---------------------------------------------------- -->
-              <div class="row g-3 mt-4 p-2">
+              <!-- <div class="row g-3 mt-4 p-2">
                 <h5 class="sub_t">Datos de pago</h5>
 
                 <div class="col-auto">
@@ -441,9 +448,9 @@
                   </select>
                 </div>
 
-              </div>
+              </div> -->
               <!-- --------------------------------------ingresos y gastos---------------------------------------------------- -->
-              <div class="row g-3 mt-4 p-2">
+              <!-- <div class="row g-3 mt-4 p-2">
                 <h5 class="sub_t">Ingresos - Egresos</h5>
 
                 <div class="col-auto">
@@ -493,7 +500,13 @@
                   <input type="text" name="nota_plan_inscripcion" class="form-control" formControlName="nota_plan_inscripcion"/>
                 </div>
 
-              <!-- ---------------------------------***************gastos*******************---------------------------------------------- -->
+
+
+
+
+
+
+
               <div class="col-auto">
                 <label for="nota_plan_inscripcion" class="font-w req">Pago Renta</label>
                 <input type="text" name="nota_plan_inscripcion" class="form-control" formControlName="nota_plan_inscripcion"/>
@@ -523,11 +536,10 @@
               </div>
 
 
-              </div>
-
+              </div> -->
 
               <!-- --------------------------------------horarios---------------------------------------------------- -->
-              <div class="row g-3 mt-4 p-2">
+              <!-- <div class="row g-3 mt-4 p-2">
                 <h5 class="sub_t">Horarios</h5>
 
                 <div class="col-auto">
@@ -632,9 +644,9 @@
                     </option>
                   </select>
                 </div>
-              </div>
+              </div> -->
               <!-- --------------------------------------Datos Adicionales---------------------------------------------------- -->
-              <div class="row g-3 mt-4 p-2">
+              <!-- <div class="row g-3 mt-4 p-2">
                 <h5 class="sub_t">Datos Adicionales</h5>
 
                 <div class="col-auto">
@@ -653,7 +665,7 @@
                   </select>
                 </div>
 
-              </div>
+              </div> -->
 
 
               <br>

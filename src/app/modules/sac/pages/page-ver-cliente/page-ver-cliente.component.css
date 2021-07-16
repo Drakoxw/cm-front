@@ -101,3 +101,13 @@
   overflow: auto;
   overflow-x: hidden;
 }
+
+
+/* errores */
+.alertas{
+  text-align: center;
+  border: 1px solid red;
+  font-size: 80%;
+  background-color: rgb(255, 168, 168);
+  color: red;
+}
