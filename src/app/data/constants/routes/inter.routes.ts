@@ -9,6 +9,12 @@ export const ROUTES_PATHS = {
   ADMIN: 'admin',
   CLIENT: 'client',
   ADDCLIENT: 'crearcliente',
-  PAYSAC: 'pagosac'
+  PAYSAC: 'pagosac',
+  SPEECH: {
+    RANARENE: 'ranarene',
+    SERVICE: 'servicioAlCliente',
+    DOBLEPAGO: 'doblepago',
+    SIDIOS: 'sidiosquiere'
+  }
 
 }

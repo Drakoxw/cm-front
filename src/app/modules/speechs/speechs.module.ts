@@ -7,6 +7,8 @@ import { SpeechSiDiosQuiereComponent } from './dumb/speech-si-dios-quiere/speech
 import { PageRanaReneComponent } from './pages/page-rana-rene/page-rana-rene.component';
 import { SpeechLlamadaRadioComponent } from './smart/speech-llamada-radio/speech-llamada-radio.component';
 import { Speech800914Component } from './smart/speech800-914/speech800914.component';
+import { SpeechRoutingModule } from './speechs-routing.module';
+import { ServicioClienteComponent } from './pages/servicio-cliente/servicio-cliente.component';
 
 
 
@@ -19,9 +21,11 @@ import { Speech800914Component } from './smart/speech800-914/speech800914.compon
     PageRanaReneComponent,
     SpeechLlamadaRadioComponent,
     Speech800914Component,
+    ServicioClienteComponent,
   ],
   imports: [
-    SharedModule
+    SharedModule,
+    SpeechRoutingModule
   ]
 })
 export class SpeechsModule { }
