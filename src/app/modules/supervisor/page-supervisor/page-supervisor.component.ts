@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-supervisor.component.css']
 })
 export class PageSupervisorComponent implements OnInit {
+  opcion: number;
 
   constructor() { }
 
