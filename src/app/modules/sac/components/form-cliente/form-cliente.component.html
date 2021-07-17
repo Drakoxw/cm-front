@@ -1,0 +1,587 @@
+<div class="body_form">
+  <form [formGroup]="dataForm">
+    <!-- -----------------------------------------basico----------------------------------------- -->
+
+    <div class="row g-3 mt-4 p-2">
+      <h5 class="sub_t">Datos Básicos</h5>
+
+      <div class="col-auto">
+        <label for="nombres" class="font-w">Nombres</label>
+        <input type="text" name="nombres" class="form-control" formControlName="nombres" autocapitalize="words" autocomplete="none" readonly="true" />
+        <div class="alertas" *ngIf="nombres.invalid && (nombres.dirty || nombres.touched)">
+          <div class="regex" *ngIf="nombres.errors.pattern">
+            Solo se aceptan letras y <b>' .</b>
+          </div>
+          <div class="min_max"
+          *ngIf="dataForm.controls['nombres'].errors.minLength || dataForm.controls['nombres'].errors.maxLength">
+            El minimo es 3 max 50
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <label for="apellidos" class="font-w">Apellidos</label>
+        <input style="text-transform: capitalize;" type="text" name="apellidos"
+          [class.inpError]="apellidos.invalid"
+          class="form-control" formControlName="apellidos" autocapitalize="words"
+          autocomplete="none" (ngModelChange)="log($event)"/>
+          <div class="alertas" *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
+            <div class="regex" *ngIf="apellidos.errors.pattern">
+              Solo se aceptan letras y <b>' .</b>
+            </div>
+            <div class="min_max"
+              *ngIf="dataForm.controls['apellidos'].errors.minlength || dataForm.controls['apellidos'].errors.maxlength">
+              El minimo es 3 max 50
+            </div>
+          </div>
+      </div>
+
+
+      <div class="col-auto">
+        <label for="status" class="font-w">Estatus</label>
+        <select
+          name="status"
+          id="statusSel"
+          class="form-control"
+          formControlName="status"
+        >
+          <option value="1" name="status">Cliente Activo</option>
+          <option value="2" name="status">Inactivo</option>
+          <option value="3" name="status">Suspendido</option>
+          <option value="4" name="status">Rojo</option>
+          <option value="5" name="status">Virgen</option>
+          <option value="6" name="status">Prospecto</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="ocupacion" class="font-w">Ocupación</label>
+        <input type="text" name="ocupacion" [class.inpError]="ocupacion.invalid" class="form-control"
+        formControlName="ocupacion"/>
+        <div class="alertas" *ngIf="ocupacion.invalid && (ocupacion.dirty || ocupacion.touched)">
+          <div class="min_max"
+            *ngIf="ocupacion.errors.minlength || ocupacion.errors.maxlength">
+            El maximo es 150 caracteres
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-auto">
+        <label for="email" class="font-w">Email</label>
+        <input type="text" name="email" class="form-control"
+        [class.inpError]="email.invalid" formControlName="email"/>
+          <div class="alertas" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div class="regex" *ngIf="email.errors.pattern">
+              Email no Válido!
+            </div>
+          </div>
+      </div>
+
+      <div class="col-auto">
+        <label for="nacimiento" class="font-w">Nacimiento</label>
+        <input
+          type="date"
+          name="nacimiento" [class.inpError]="nacimiento.invalid"
+          class="form-control"
+          formControlName="nacimiento"/>
+          <div class="alertas" *ngIf="nacimiento.invalid && (nacimiento.dirty || nacimiento.touched)">
+            <div class="regex" *ngIf="nacimiento.errors.pattern">
+              Fecha no Válida!
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- -----------------------------------------lugar----------------------------------------- -->
+    <div class="row g-3 mt-4 p-2">
+      <h5 class="sub_t">Datos de Ubicación</h5>
+
+      <div class="col-auto">
+        <label for="zipcode" class="font-w">Zip code</label>
+        <input
+          type="text"
+          name="zipcode" [class.inpError]="zipcode.invalid"
+          class="form-control"
+          formControlName="zipcode"/>
+          <div class="alertas" *ngIf="zipcode.invalid && (zipcode.dirty || zipcode.touched)">
+            <div class="regex" *ngIf="zipcode.errors.pattern">
+              Mínimo 4 max 8 caracteres
+            </div>
+          </div>
+
+      </div>
+
+      <div class="col-auto">
+        <label for="ciudad" class="font-w">Ciudad</label>
+        <input type="text" name="ciudad" [class.inpError]="ciudad.invalid" class="form-control" formControlName="ciudad" />
+        <div class="alertas" *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)">
+          <div class="regex" *ngIf="ciudad.errors.pattern">
+            Máximo 100 caracteres
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-auto">
+        <label for="direccion" class="font-w">Dirección</label>
+        <input
+          type="text"
+          name="direccion"
+          class="form-control"
+          formControlName="direccion"
+        />
+      </div>
+
+      <div class="col-auto">
+        <label for="apartamento" class="font-w">Apartamento</label>
+        <input
+          type="text"
+          name="apartamento"
+          class="form-control"
+          formControlName="apartamento"
+        />
+      </div>
+
+      <div class="col-auto">
+        <label for="estado" class="font-w">Estado</label>
+        <select
+          name="estado"
+          id="estadoSel"
+          class="form-control"
+          formControlName="estado"
+        >
+          <option value="TX" name="estado">Texas</option>
+          <option value="MS" name="estado">Massachusetts</option>
+          <option value="NY" name="estado">New York</option>
+          <option value="CT" name="estado">Connecticut</option>
+          <option value="NJ" name="estado">New Jersy</option>
+          <option value="CO" name="estado">Colorado</option>
+          <option value="RI" name="estado">Rhode Island</option>
+          <option value="MN" name="estado">Minnesota</option>
+          <option value="KY" name="estado">Kentucky</option>
+          <option value="PR" name="estado">Puerto Rico</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="direccion_reciente" class="font-w">Dirección Reciente</label>
+        <input
+          type="text"
+          name="direccion_reciente"
+          class="form-control"
+          formControlName="direccion_reciente"
+        />
+      </div>
+    </div>
+
+    <!-- --------------------------------------telefonos---------------------------------------------------- -->
+    <div class="row g-3 mt-4 p-2">
+      <h5 class="sub_t">Telefonos</h5>
+
+      <div class="col-auto">
+        <label for="telmovil" class="font-w"
+          >Telefono de Registro</label>
+        <input
+          type="text"
+          name="telmovil" [class.inpError]="telmovil.invalid"
+          class="form-control" maxlength="10"
+          formControlName="telmovil"/>
+          <div class="alertas" *ngIf="telmovil.invalid && (telmovil.dirty || telmovil.touched)">
+            <div class="regex" *ngIf="telmovil.errors.pattern">
+              Telefono no Válido!
+            </div>
+          </div>
+      </div>
+
+      <div class="col-auto">
+        <label for="telcasa" class="font-w">Telefono Casa</label>
+        <input
+          type="text" maxlength="10"
+          name="telcasa"  [class.inpError]="telcasa.invalid"
+          class="form-control"
+          formControlName="telcasa"/>
+          <div class="alertas" *ngIf="telcasa.invalid && (telcasa.dirty || telcasa.touched)">
+            <div class="regex" *ngIf="telcasa.errors.pattern">
+              Telefono no Válido!
+            </div>
+          </div>
+      </div>
+
+      <div class="col-auto">
+        <label for="teltrabajo" class="font-w"
+          >Telefono Trabajo</label
+        >
+        <input
+          type="text" maxlength="10"
+          name="teltrabajo" [class.inpError]="teltrabajo.invalid"
+          class="form-control"
+          formControlName="teltrabajo"/>
+          <div class="alertas" *ngIf="teltrabajo.invalid && (teltrabajo.dirty || teltrabajo.touched)">
+            <div class="regex" *ngIf="teltrabajo.errors.pattern">
+              Telefono no Válido!
+            </div>
+          </div>
+      </div>
+
+      <div class="col-auto">
+        <label for="telwht" class="font-w">Telefono Whastapp</label>
+        <input
+          type="text" maxlength="10"
+          name="telwht" [class.inpError]="telwht.invalid"
+          class="form-control"
+          formControlName="telwht"/>
+          <div class="alertas" *ngIf="telwht.invalid && (telwht.dirty || telwht.touched)">
+            <div class="regex" *ngIf="telwht.errors.pattern">
+              Telefono no Válido!
+            </div>
+          </div>
+      </div>
+
+      <div class="col-auto">
+        <label for="telotro" class="font-w">Otro Telefono</label>
+        <input
+          type="text" maxlength="10"
+          name="telotro" [class.inpError]="telotro.invalid"
+          class="form-control"
+          formControlName="telotro" />
+          <div class="alertas" *ngIf="telotro.invalid && (telotro.dirty || telotro.touched)">
+            <div class="regex" *ngIf="telotro.errors.pattern">
+              Telefono no Válido!
+            </div>
+          </div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="compania_movil" class="font-w">Compañia movil</label>
+        <select class="form-control" formControlName="compania_movil" name="compania_movil" >
+          <option value="Verizon">Verizon</option>
+          <option value="AT&T">AT&T</option>
+          <option value="Sprint">Sprint</option>
+          <option value="T-Movil">T-Movil</option>
+          <option value="U.S. Cellular">U.S. Cellular</option>
+          <option value="MetroPCS">MetroPCS</option>
+          <option value="Vox movil">Vox movil</option>
+        </select>
+      </div>
+    </div>
+    <!-- --------------------------------------plan pagos---------------------------------------------------- -->
+    <div class="row g-3 mt-4 p-2">
+      <h5 class="sub_t">Datos de pago</h5>
+
+      <div class="col-auto">
+        <label for="valor_inscripcion" class="font-w"
+          >Valor a pagar de Inscripción</label>
+        <select
+          name="valor_inscripcion"
+          id="valor_inscripcionSel"
+          class="form-control"
+          formControlName="valor_inscripcion">
+          <option value="1000" name="valor_inscripcion">$ 1000</option>
+          <option value="800" name="valor_inscripcion">$ 800</option>
+          <option value="700" name="valor_inscripcion">$ 700</option>
+          <option value="500" name="valor_inscripcion">$ 500</option>
+          <option value="300" name="valor_inscripcion">$ 300</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="cuotas_inscripcion" class="font-w"
+          >Cuotas de Inscripción</label>
+        <select
+          name="cuotas_inscripcion"
+          class="form-control"
+          formControlName="cuotas_inscripcion">
+          <option value="1" name="cuotas_inscripcion">1 Cuota</option>
+          <option value="2" name="cuotas_inscripcion">2 Cuotas</option>
+          <option value="3" name="cuotas_inscripcion">3 Cuotas</option>
+          <option value="4" name="cuotas_inscripcion">4 Cuotas</option>
+          <option value="5" name="cuotas_inscripcion">5 Cuotas</option>
+        </select>
+      </div>
+
+      <div class="col-8">
+        <label for="nota_plan_inscripcion" class="font-w"
+          >Notas Plan Inscripción <span class="req">!!!!</span></label>
+        <input
+          type="text" [class.inpError]="nota_plan_inscripcion.invalid"
+          name="nota_plan_inscripcion"
+          class="form-control"
+          formControlName="nota_plan_inscripcion"/>
+      </div>
+
+
+      <div class="col-auto">
+        <label for="valor_mensualidad" class="font-w"
+          >Valor a pagar Mensualidad</label>
+        <select
+          name="valor_mensualidad"
+          id="valor_mensualidad"
+          class="form-control"
+          formControlName="valor_mensualidad"
+        >
+          <option value="499" name="valor_mensualidad">$ 499</option>
+          <option value="399" name="valor_mensualidad">$ 399</option>
+          <option value="299" name="valor_mensualidad">$ 299</option>
+          <option value="265" name="valor_mensualidad">$ 265</option>
+          <option value="249" name="valor_mensualidad">$ 249</option>
+          <option value="229" name="valor_mensualidad">$ 229</option>
+          <option value="199,5" name="valor_mensualidad">$ 199,5</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="plan_mes" class="font-w"
+          >Plan de pagos x Mes</label>
+        <select name="plan_mes" id="plan_mes" class="form-control" formControlName="plan_mes">
+          <option value="3" name="plan_mes">3 Meses</option>
+          <option value="6" name="plan_mes">6 Meses</option>
+          <option value="10" name="plan_mes">10 Meses</option>
+          <option value="12" name="plan_mes">12 Meses</option>
+          <option value="15" name="plan_mes">15 Meses</option>
+          <option value="18" name="plan_mes">18 Meses</option>
+          <option value="24" name="plan_mes">2 Años</option>
+          <option value="36" name="plan_mes">3 Años</option>
+          <option value="48" name="plan_mes">4 Años</option>
+          <option value="60" name="plan_mes">5 Años</option>
+          <option value="72" name="plan_mes">6 Años</option>
+        </select>
+      </div>
+    </div>
+    <!-- --------------------------------------ingresos y gastos---------------------------------------------------- -->
+    <div class="row g-3 mt-4 p-2">
+      <h5 class="sub_t">Ingresos - Egresos</h5>
+
+      <div class="col-auto">
+        <label for="tipo_ingreso" class="font-w">Tipo de Ingreso</label>
+        <select name="tipo_ingreso" id="tipo_ingreso" class="form-control" formControlName="tipo_ingreso">
+          <option value=1 name="tipo_ingreso">Nomina</option>
+          <option value=2 name="tipo_ingreso">Cuenta propia</option>
+          <option value=3 name="tipo_ingreso">Cheque del gobierno</option>
+          <option value=4 name="tipo_ingreso">Tax ID</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="salario" class="font-w">Salario</label>
+        <input type="text" name="salario"  [class.inpError]="salario.invalid" class="form-control" formControlName="salario"/>
+        <div class="alertas" *ngIf="telotro.invalid && (salario.dirty || salario.touched)">
+          <div class="regex" *ngIf="salario.errors.pattern">
+            Solo se admiten valores númericos
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <label for="sueldoS_Q" class="font-w">Sueldo Sem/Quin/Mens</label>
+        <select name="sueldoS_Q" id="sueldoS_Q" class="form-control" formControlName="sueldoS_Q">
+          <option value=1 name="sueldoS_Q">Semanal</option>
+          <option value=2 name="sueldoS_Q">Quincenal</option>
+          <option value=3 name="sueldoS_Q">Mensual</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="dia_pagoS" class="font-w">Día Pago</label>
+        <select name="dia_pagoS" id="dia_pago" class="form-control" formControlName="dia_pagoS">
+          <option value="1" name="dia_pagoS">Domingo</option>
+          <option value="2" name="dia_pagoS">Lunes</option>
+          <option value="3" name="dia_pagoS">Martes</option>
+          <option value="4" name="dia_pagoS">Miércoles</option>
+          <option value="5" name="dia_pagoS">Jueves</option>
+          <option value="6" name="dia_pagoS">Viernes</option>
+          <option value="7" name="dia_pagoS">Sábado</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="dia_pago" maxlength="100" [class.inpError]="dia_pago.invalid" class="font-w">Día Primer Pago</label>
+        <input type="tex" name="dia_pago" class="form-control" formControlName="dia_pago"/>
+      </div>
+
+      <div class="col-auto">
+        <label for="dia_pago2" maxlength="100" [class.inpError]="dia_pago2.invalid" class="font-w">Día Segundo Pago</label>
+        <input type="text" name="dia_pago2" class="form-control" formControlName="dia_pago2"/>
+      </div>
+
+      <div class="col-auto">
+        <label for="pago_renta" [class.inpError]="pago_renta.invalid" class="font-w req">Pago Renta</label>
+        <input type="text" name="pago_renta" class="form-control" formControlName="pago_renta"/>
+        <div class="alertas" *ngIf="pago_renta.invalid && (pago_renta.dirty || pago_renta.touched)">
+          <div class="regex" *ngIf="pago_renta.errors.pattern">
+            Solo se admiten valores númericos
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <label for="capacidad_ahorro" [class.inpError]="capacidad_ahorro.invalid" class="font-w req">Capacidad de Ahorro</label>
+        <input type="text" name="capacidad_ahorro" class="form-control" formControlName="capacidad_ahorro"/>
+        <div class="alertas" *ngIf="capacidad_ahorro.invalid && (capacidad_ahorro.dirty || capacidad_ahorro.touched)">
+          <div class="regex" *ngIf="capacidad_ahorro.errors.pattern">
+            Solo se admiten valores númericos
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <label for="acredores" maxlength="100"  [class.inpError]="acredores.invalid" class="font-w req">Acredores</label>
+        <input type="text" name="acredores" class="form-control" formControlName="acredores"/>
+      </div>
+
+      <div class="col-auto">
+        <label for="creditos" maxlength="100" [class.inpError]="creditos.invalid" class="font-w req">Creditos</label>
+        <input type="text" name="creditos" class="form-control" formControlName="creditos"/>
+      </div>
+
+      <div class="col-auto">
+        <label for="deudas_pendientes" maxlength="100" [class.inpError]="deudas_pendientes.invalid" class="font-w req">Deudas</label>
+        <input type="text" name="deudas_pendientes" class="form-control" formControlName="deudas_pendientes"/>
+      </div>
+
+    </div>
+    <!-- --------------------------------------horarios---------------------------------------------------- -->
+    <div class="row g-3 mt-4 p-2">
+      <h5 class="sub_t">Horarios</h5>
+
+      <div class="col-auto">
+        <label for="plan_mes" class="font-w"
+          >Hora que se Duerme</label>
+          <input type="time" name="horaduerme" maxlength="20" class="form-control" formControlName="horaduerme"/>
+      </div>
+
+      <div class="col-auto">
+        <label for="plan_mes" class="font-w"
+          >Hora que se Duerme</label>
+          <input type="time" name="horaduerme" maxlength="20" class="form-control" formControlName="horalevanta"/>
+      </div>
+
+      <div class="col-auto">
+        <label for="dialibre" class="font-w">Dia Libre</label>
+        <select name="dialibre" class="form-control" id="dialibreSele" formControlName="dialibre">
+          <option value="Domingo" name="dialibre">Domingo</option>
+          <option value="Lunes" name="dialibre">Lunes</option>
+          <option value="Martes" name="dialibre">Martes</option>
+          <option value="Miercoles" name="dialibre">Miércoles</option>
+          <option value="Jueves" name="dialibre">Jueves</option>
+          <option value="Viernes" name="dialibre">Viernes</option>
+          <option value="Sabado" name="dialibre">Sábado</option>
+          <option value="Fines_semana" name="dialibre">Fin de semana</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="dia_llamar" class="font-w">Dia disponible para llamar</label>
+        <select name="dia_llamar" class="form-control" id="dia_llamar" formControlName="dia_llamar">
+          <option value="Domingo" name="dia_llamar">Domingo</option>
+          <option value="Lunes" name="dia_llamar">Lunes</option>
+          <option value="Martes" name="dia_llamar">Martes</option>
+          <option value="Miercoles" name="dia_llamar">Miércoles</option>
+          <option value="Jueves" name="dia_llamar">Jueves</option>
+          <option value="Viernes" name="dia_llamar">Viernes</option>
+          <option value="Sabado" name="dia_llamar">Sábado</option>
+          <option value="Fines_semana" name="dia_llamar">Fin de semana</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="horariotrabajo" class=" font-w">Horario de trabajo</label>
+        <input type="text" class="form-control" name="horariotrabajo" maxlength="10" formControlName="horariotrabajo"/>
+      </div>
+
+
+    </div>
+    <!-- --------------------------------------Datos Adicionales---------------------------------------------------- -->
+    <div class="row g-3 mt-4 p-2">
+      <h5 class="sub_t">Datos Adicionales</h5>
+
+      <div class="col-auto">
+        <label for="carro" class="font-w">Carro</label>
+        <select name="carro" id="carro" class="form-control" formControlName="carro">
+          <option value="1" name="carro">No</option>
+          <option value="2" name="carro">Si</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="casa" class="font-w">Casa</label>
+        <select name="casa" id="casa" class="form-control" formControlName="casa">
+          <option value="1" name="casa">No</option>
+          <option value="2" name="casa">Si</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="credito_check" class="font-w">Credito checkeado</label>
+        <select name="credito_check" id="credito_check" class="form-control" formControlName="credito_check">
+          <option value="1" name="credito_check">Tiene colecciones</option>
+          <option value="2" name="credito_check">No ha checkeado</option>
+          <option value="3" name="credito_check">No tiene credito</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="empleador" class="font-w">Empleador</label>
+        <input type="text" name="empleador" class="form-control" formControlName="empleador" autocapitalize="words" autocomplete="none" readonly="true" />
+        <div class="alertas" *ngIf="empleador.invalid && (empleador.dirty || empleador.touched)">
+          <div class="regex" *ngIf="empleador.errors.pattern">
+            Solo se aceptan letras y <b>' .</b>
+          </div>
+          <div class="min_max"
+          *ngIf="dataForm.controls['empleador'].errors.minLength || dataForm.controls['empleador'].errors.maxLength">
+            El minimo es 3 max 50
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <label for="otraactividad" class="font-w">Otra Actividad</label>
+        <input type="time" name="otraactividad" maxlength="20" class="form-control" formControlName="otraactividad"/>
+      </div>
+
+      <div class="col-auto">
+        <label for="robo_identidad" class=" font-w">Robo de Identidad</label>
+        <select name="robo_identidad" id="robo_identidadSel" class="form-control" formControlName="robo_identidad">
+          <option value="0" name="robo_identidad">No</option>
+          <option value="1" name="robo_identidad">Si</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="contratoenviado" class=" font-w">Contrato Enviado</label>
+        <select name="contrato_enviado" id="contrato_enviado" class="form-control" formControlName="contrato_enviado">
+          <option value="0" name="contratoenviado">No</option>
+          <option value="1" name="contratoenviado">Si</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="contratofirmado" class=" font-w">Contrato Firmado</label>
+        <select name="contrato_firmado" id="contrato_firmado" class="form-control" formControlName="contrato_firmado">
+          <option value="0" name="contratofirmado">No</option>
+          <option value="1" name="contratofirmado">Si</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="licencia" class=" font-w">Licencia</label>
+        <select name="licencia" id="licencia" class="form-control" class="form-control" formControlName="licencia">
+          <option value="0" name="licencia">No</option>
+          <option value="1" name="licencia">Si</option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <label for="reportex3" class=" font-w">Reporte X 3</label>
+        <select name="reportex3" id="reportex3" class="form-control" class="form-control" formControlName="reportex3">
+          <option value="0" name="reportex3">No</option>
+          <option value="1" name="reportex3">Si</option>
+        </select>
+      </div>
+
+    </div>
+    <br>
+    <br>
+
+  </form>
+</div>

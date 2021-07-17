@@ -1,9 +1,10 @@
 .nav {
   display: flex;
   flex-direction: column;
+  color: #d1deec;
   height: 40px;
-  background-color: #a4d1ff;
-  border-bottom: solid 2px rgb(136, 136, 136);
+  background-color: #184883;
+  border-bottom: solid 2px;
 }
 
 .tabla{

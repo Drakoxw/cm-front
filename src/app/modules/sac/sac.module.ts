@@ -5,6 +5,7 @@ import { PageVerClienteComponent } from './pages/page-ver-cliente/page-ver-clien
 import { PageNuevoClienteComponent } from './pages/page-nuevo-cliente/page-nuevo-cliente.component';
 import { PagePagosSACComponent } from './pages/page-pagos-sac/page-pagos-sac.component';
 import { NavBarSACComponent } from './components/nav-bar-sac/nav-bar-sac.component';
+import { FormClienteComponent } from './components/form-cliente/form-cliente.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { NavBarSACComponent } from './components/nav-bar-sac/nav-bar-sac.compone
     PageVerClienteComponent,
     PageNuevoClienteComponent,
     PagePagosSACComponent,
-    NavBarSACComponent
+    NavBarSACComponent,
+    FormClienteComponent
   ],
   imports: [
     SharedModule
