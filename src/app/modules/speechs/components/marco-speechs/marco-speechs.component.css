@@ -1,0 +1,90 @@
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 200;
+  text-align: center;
+}
+
+.tr-td {
+  border: 2px solid black;
+}
+
+.boton_home {
+  position: absolute;
+  left: 7rem;
+}
+
+.second {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.barra_arriba {
+  width: 100%;
+  height: 86px;
+  position: relative;
+}
+
+.barra_izq {
+  height: 100%;
+  width: 7rem;
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.barra_der {
+  background-color: black;
+  height: 100%;
+  width: 7rem;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+}
+
+.link {
+  width: 100%;
+}
+
+.img_top {
+  height: 86px;
+}
+
+.ul_top {
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+}
+
+.td_top {
+  width: 5.5%;
+  border: 2px solid black;
+}
+
+.im {
+  height: 6.8%;
+  border: 2px solid black;
+}
+
+.im a img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.td_top a img {
+  width: 100%;
+  height: 86px;
+  cursor: pointer;
+}
+
+.td_izq a img {
+  width: 88px;
+  height: 5vh;
+}
