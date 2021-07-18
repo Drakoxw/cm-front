@@ -1,10 +1,32 @@
 
 export interface RespCalling {
-  did_local: string
-  ext: string
-  id_cliente: string
-  numero_entrante: string
+  did_local: string,
+  ext: string,
+  id_cliente: string,
+  numero_entrante: string,
 }
+
+export interface Usuarios {
+  apellido: string,
+  id: string,
+  nombre: string,
+}
+
+export interface UsuariosCall {
+  departamento: string,
+  ext: string,
+  ipaddress: string,
+  nombres: string,
+  status: string,
+}
+
+export interface Dids {
+  did: string,
+  estado: string,
+  numero: string,
+}
+
+
 
 export interface RespCitas {
   id: string,

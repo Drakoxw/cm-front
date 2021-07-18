@@ -4,7 +4,8 @@ import { API_ROUTES } from '../constants/routes';
 import { ClientModel } from '../models/clientes.models';
 import { map, catchError } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { RespCalling, RespCitas } from '../models/respuestas.models';
+import { Dids, RespCalling, RespCitas, Usuarios, UsuariosCall } from '../models/respuestas.models';
+import { Llamada, Pass } from '../models/otros.moldes';
 
 @Injectable({
   providedIn: 'root'
@@ -123,15 +124,13 @@ export class HttpService {
     data: RespCitas
   }>{
     const res = { error: false, msg: '', data: null };
-    return this.http.get(API_ROUTES.CITAS)
+    return this.http.get<RespCitas>(API_ROUTES.CITAS)
     .pipe(
-      map(
-        r => {
-          res.data = r;
-          return res;;
-        }
-      )
-    )
+      map(r => {
+        res.data = r;
+        return res.data;
+      }), catchError(this.error)
+    );
   };
 
   /**
@@ -145,7 +144,7 @@ export class HttpService {
     data: RespCitas
   }>{
     const res = { error: false, msg: '', data: null };
-    return this.http.get(`${API_ROUTES.CITAS}${id}` )
+    return this.http.get<RespCitas>(`${API_ROUTES.CITAS}${id}` )
     .pipe(
       map(
         r => {
@@ -201,17 +200,80 @@ export class HttpService {
 ////////////////////////////////CITAS//////////////////////////////////////////
 /* ------------------------------------------------------------------------- */
 ////////////////////////////////USERS//////////////////////////////////////////
-  getUsers() {
-    return this.http.get(`/users/`);
+
+  /**
+   * GET de todos los usuarios registrados
+   * @returns Objeto: Usuarios
+   */
+  getUsers(): Observable<{
+    error: boolean,
+    msg: string,
+    data: RespCitas
+  }>{
+    const res = { error: false, msg: '', data: null };
+    return this.http.get<Usuarios>(`/users/`)
+    .pipe(
+      map(r => {
+        res.data = r;
+        return res.data;
+      }), catchError(this.error)
+    );
   };
-  getUDids() {
-    return this.http.get(`/dids`);
+
+  /**
+   * GET de los dids
+   * @returns Objeto: Dids
+   */
+  getUDids(): Observable<{
+    error: boolean,
+    msg: string,
+    data: RespCitas
+  }>{
+    const res = { error: false, msg: '', data: null };
+    return this.http.get<Dids>(`/dids`)
+    .pipe(
+      map(r => {
+        res.data = r;
+        return res.data;
+      }), catchError(this.error)
+    );
   }
-  getCall(data) {
-    return this.http.post(`/call`, data);
-  }
-  cambiarPass(obj) {
+
+  /**
+   * GET de los usuarios con extensiones activas
+   * @returns Objeto: UsuariosCall
+   */
+  getUserExt(): Observable<{
+    error: boolean,
+    msg: string,
+    data: RespCitas
+  }>{
+    const res = { error: false, msg: '', data: null };
+    return this.http.get<UsuariosCall>(`/phones`)
+    .pipe(
+      map(r => {
+        res.data = r;
+        return res.data;
+      }), catchError(this.error)
+    );
+  };
+
+  /**
+   * POST de cambio de contraseña de usuarios
+   * @param obj
+   * @returns
+   */
+  cambiarPass(obj:Pass) {
     return this.http.post(`/passwd`, obj);
+  }
+
+  /**
+   * Metodo para llamar a un cliente
+   * @param data
+   * @returns La llamada al cliente selecionado
+   */
+  llamar(data:Llamada) {
+    return this.http.post(`/call`, data);
   }
 ///////////////////////////////USERS//////////////////////////////////////////
 }

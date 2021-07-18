@@ -3,6 +3,18 @@ export interface Usuario {
   password: string,
   user: string
 }
+
+export interface Pass {
+  old_passwd: string,
+  new_passwd: string,
+}
+
+export interface Llamada {
+  tipo_tel: string,
+  id_cliente: string,
+  did: string,
+}
+
 export interface TokenI {
   token:string
 }
