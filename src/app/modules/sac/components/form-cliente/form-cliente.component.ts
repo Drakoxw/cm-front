@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { REGEX } from 'src/app/data/constants/regex';
@@ -11,6 +11,7 @@ import { HttpService } from 'src/app/data/services/http.service';
   styleUrls: ['./form-cliente.component.css']
 })
 export class FormClienteComponent implements OnInit, OnChanges {
+  @Output() tituloEmit = new EventEmitter<string>()
   @Input() dataCliente: ClientModel;
   dataForm: FormGroup;
   id: string;
@@ -30,6 +31,7 @@ export class FormClienteComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+
   }
 
   log(ev){}

@@ -159,7 +159,7 @@ export class HttpService {
    /**
    * Post de Citas Nuevas
    * @id id del Cliente
-   * @param data Partial<RespCitas>
+   * @param data Partial: RespCitas
    * @returns Observable<ResApi>
    */
   postCita(id: string, data: Partial<RespCitas>): Observable<{
@@ -180,7 +180,7 @@ export class HttpService {
    /**
    * Actualizador de Citas Nuevo
    * @id id de la cita
-   * @param data Partial<RespCitas>
+   * @param data Partial: RespCitas
    * @returns Observable<ResApi> => data.row
    */
     patchCita(id: string, data: Partial<RespCitas>): Observable<{
@@ -209,6 +209,9 @@ export class HttpService {
   }
   getCall(data) {
     return this.http.post(`/call`, data);
+  }
+  cambiarPass(obj) {
+    return this.http.post(`/passwd`, obj);
   }
 ///////////////////////////////USERS//////////////////////////////////////////
 }

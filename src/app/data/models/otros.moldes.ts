@@ -12,3 +12,18 @@ export interface RespApi {
   msg: string,
   data: {}
 }
+
+export interface FechasPagos {
+  fecha_inicio: string,
+  fecha_final: string
+}
+
+export interface RespPost{
+  id: number
+}
+
+export interface RespPatch{
+  rows: number
+}
+
+

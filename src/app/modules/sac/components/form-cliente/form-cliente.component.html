@@ -1,7 +1,6 @@
 <div class="body_form">
   <form [formGroup]="dataForm">
     <!-- -----------------------------------------basico----------------------------------------- -->
-
     <div class="row g-3 mt-4 p-2">
       <h5 class="sub_t">Datos Básicos</h5>
 
@@ -92,7 +91,6 @@
           </div>
       </div>
     </div>
-
     <!-- -----------------------------------------lugar----------------------------------------- -->
     <div class="row g-3 mt-4 p-2">
       <h5 class="sub_t">Datos de Ubicación</h5>
@@ -174,7 +172,6 @@
         />
       </div>
     </div>
-
     <!-- --------------------------------------telefonos---------------------------------------------------- -->
     <div class="row g-3 mt-4 p-2">
       <h5 class="sub_t">Telefonos</h5>
@@ -536,7 +533,7 @@
 
       <div class="col-auto">
         <label for="otraactividad" class="font-w">Otra Actividad</label>
-        <input type="time" name="otraactividad" maxlength="20" class="form-control" formControlName="otraactividad"/>
+        <input type="text" name="otraactividad" maxlength="50" class="form-control" formControlName="otraactividad"/>
       </div>
 
       <div class="col-auto">

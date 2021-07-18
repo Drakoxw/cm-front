@@ -8,6 +8,8 @@ export const API_ROUTES = {
 
   CLIENTS: `${ENV.URI}/clients/`,
 
+  PASS:  `${ENV.URI}/passwd`,
+
   CITAS: `${ENV.URI}/dates/`,
 
   CALL: `${ENV.URI}/call`,
@@ -16,5 +18,14 @@ export const API_ROUTES = {
 
   USERS: `${ENV.URI}/users/`,
 
+  COBROS: `${ENV.URI}/cobros/`,
+
+  PAGOS: `${ENV.URI}/pagos/`,
+
+  DOCUMENTS: `${ENV.URI}/documents/`,
+
+  CREDIT: `${ENV.URI}/creditreport/`,
+
+  CARTAS: `${ENV.URI}/letter/`
 
 }

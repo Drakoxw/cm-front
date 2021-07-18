@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "create": "ng g c modules/sac/components/formCliente",
+    "create": "ng g c modules/sac/components/cartas",
     "createS": "ng g s core/services/errorInterceptor",
     "createP": "ng g pipe data/pipes/ModTel",
     "createG": "ng generate guard data/guards/speech",
