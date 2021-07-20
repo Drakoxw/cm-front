@@ -1,0 +1,177 @@
+.body_doc{
+  display: flex;
+}
+.font-w {
+  font-weight: 600;
+}
+
+.tabla{
+  min-width: 80%;
+}
+.tabla{
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: -3px 7px 11px 2px;
+  max-height: 87vh;
+  overflow: auto;
+}
+.table_mod{
+  background-color: #002a51;
+  color: white;
+}
+.table_mod_red{
+  background-color: red;
+  color: white;
+}
+.nav-tabs {
+  border-bottom: 1px solid #002a52;
+}
+.nav-tabs {
+  background-color: white;
+  border-bottom: 1px solid #002a52;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-left: 1rem;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #002a52;
+  background-color: #daedfe;
+  border-color: #002a52 #002a52 #dbeeff;
+}
+.nav-tabs .nav-link{
+  color: #002a52;
+}
+.visual {
+  width: 300px;
+  height: 100%;
+}
+.btn-sm{
+  float: right;
+}
+/* formulario de subida */
+.mn{
+  margin-top: -2rem;
+}
+.sub_t{
+  display: flex;
+  width: max-content;
+  height: 27px;
+  position: relative;
+  color: white;
+  padding: 0 7px;
+  top: -27px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #002a52;
+}
+.formulario{
+  margin: 2rem;
+  width: 70%;
+  border: 1px solid #184883;
+  padding: 5px;
+  border-radius: 20px;
+  height: fit-content;
+}
+.formulario .marco{
+  border: 2px solid #184883;
+  padding: .5rem;
+  border-radius: 14px;
+}
+
+.visualDoc{
+  text-align: center;
+  height: 100%;
+  width: 30%;
+  margin: 1rem;
+  background-color: white;
+  margin-left: -1rem;
+  box-shadow: -3px 7px 11px 2px;
+}
+
+.vistaP{
+  background-color: #184883;
+  color: white;
+  padding: 5px;
+}
+.img{
+  overflow-y: auto;
+  max-height: 60vh;
+}
+.img img{
+  width: 90%;
+  height: auto;
+}
+
+@media screen and (max-width: 840px) {
+  .body_doc{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .visual{
+    background-color: white;
+    padding: .5rem;
+    margin: 1rem;
+    width: 100%;
+    display: flex;
+  }
+  .data{
+    padding: .5rem;
+  }
+
+}
+/* boton modificado */
+
+.form-group input[type=file i]{
+  background-color: #007bff;
+}
+option {
+    color: black;
+}
+
+.custom-input-file {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto 0;
+  min-height: 15px;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  border-radius: .25rem;
+}
+
+.custom-input-file .input-file {
+ border: 10000px solid transparent;
+ cursor: pointer;
+ font-size: 10000px;
+ margin: 0;
+ opacity: 0;
+ outline: 0 none;
+ padding: 0;
+ position: absolute;
+ right: -1000px;
+ top: -1000px;
+}
+
+.adMod{
+  background-color: #069c13!important;
+  border-color: #00cc11!important;
+}
+
+.errores{
+  border: 1px solid;
+  font-weight: 600;
+  margin-top: 2px;
+  padding: 0 9px;
+  border-radius: 6px;
+  color: #f12337;
+}
+
+
+/* boton modificado */
