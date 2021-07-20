@@ -1,1 +1,137 @@
-<p>citas works!</p>
+
+<div class="conte d-flex w100">
+  <div class="formulario">
+    <div class="marco">
+      <h5 class="sub_t">Nueva Cita</h5>
+      <div class="row g-3 p-2 mn" >
+
+        <div class="col-auto">
+          <label for="fecha_cita" class="font-w">Fecha de la Cita</label>
+          <input type="date" name="fecha_cita" class="form-control"
+            pattern="^(\d{4})(\/|-)(0[1-9]|1[0-2])(\/|-)([0-2][0-9]|3[0-1])$" [min]="hoy" [(ngModel)]="fecha_cita"
+            #fecha_citaI="ngModel" />
+          <div class="errores" *ngIf="fecha_citaI.invalid && fecha_citaI.dirty">
+            <div *ngIf="fecha_citaI.errors.pattern">
+              <small>Formato de <b>Fecha</b> no válido</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto">
+          <label for="hora_cita" class="font-w">Hora de la Cita</label>
+          <input type="time" name="hora_cita" class="form-control" [(ngModel)]="hora_cita" #hora_citaI="ngModel" />
+          <div class="errores" *ngIf="hora_citaI.invalid && hora_citaI.dirty">
+            <div *ngIf="hora_citaI.errors.pattern">
+              <small>Formato de <b>hora</b> no válido</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto">
+          <label for="estado_citaSel" class="font-w">Estado de Cita</label>
+          <select name="estado_cita" id="estado_citaSel" class="form-control" [(ngModel)]="estado_cita">
+            <option value="1" name="estado_cita" selected>En Agenda</option>
+          </select>
+        </div>
+
+        <div class="col-auto">
+          <label for="motivo_cita" class="font-w">Motivo</label>
+          <select name="motivo_cita" id="motivo_citaSel" class="form-control" [(ngModel)]="motivo_cita">
+            <option value="1" name="motivo_cita">Lectura de reporte</option>
+            <option value="2" name="motivo_cita">Hablar de caso</option>
+            <option value="3" name="motivo_cita">Documentos pendientes</option>
+            <option value="4" name="motivo_cita">Firmar contrato</option>
+            <option value="5" name="motivo_cita">Cobro</option>
+          </select>
+        </div>
+
+        <div class="col-auto">
+          <label for="nota_cita" class="font-w">Nota-Comentario <span class="obli">*</span>
+          </label>
+          <input type="text" name="nota_cita" class="form-control" maxlength="500" pattern="([a-zA-Z0-9¡¿!.,: ;\?]{1,500})"
+            [(ngModel)]="nota_cita" #nota_citaI="ngModel" />
+          <div class="errores" *ngIf="nota_citaI.invalid && nota_citaI.dirty">
+            <div *ngIf="nota_citaI.errors.pattern">
+              <small>Use solo <b>caracteres</b> comunes</small>
+            </div>
+            <div *ngIf="nota_citaI.errors.required">
+              <small>Campo es Obligatorio</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto">
+          <label for="nota_cita" class="font-w">Nota-Comentario <span class="obli">*</span>
+          </label>
+          <input type="text" name="nota_cita" class="form-control" maxlength="500" pattern="([a-zA-Z0-9¡¿!.,: ;\?]{1,500})"
+            [(ngModel)]="nota_cita" #nota_citaI="ngModel" />
+          <div class="errores" *ngIf="nota_citaI.invalid && nota_citaI.dirty">
+            <div *ngIf="nota_citaI.errors.pattern">
+              <small>Use solo <b>caracteres</b> comunes</small>
+            </div>
+            <div *ngIf="nota_citaI.errors.required">
+              <small>Campo es Obligatorio</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto">
+          <label for="cobro" class="font-w">Agendar Cita</label>
+          <button class="btn btn-primary btn-small btn-block" (click)="agregarCita()">
+            Add...
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="tabla">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr class="table_mod">
+        <th scope="col">#</th>
+        <th scope="col">Fecha de cita</th>
+        <th scope="col">Asignado</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Motivos</th>
+        <th scope="col">Notas</th>
+        <th scope="col">Creación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dataCitas; index as i">
+        <td>{{ i + 1 }}</td>
+        <td >{{ item.fechahora }}</td>
+        <td>falta asignado </td>
+        <td>
+          <div [ngSwitch]="item.estado">
+            <span *ngSwitchCase="1">En Agenda</span>
+            <span *ngSwitchCase="2">Postpuesta</span>
+            <span *ngSwitchCase="3">No Contestada</span>
+            <span *ngSwitchCase="4">Cliente Ocupado</span>
+            <span *ngSwitchCase="10">Cita Atendida</span>
+            <span *ngSwitchCase="11">Solicitud a Post</span>
+          </div>
+        </td>
+        <td>
+          <div [ngSwitch]="item.motivo">
+            <span *ngSwitchCase="1">Lectura de Reporte</span>
+            <span *ngSwitchCase="2">Hablar del Caso</span>
+            <span *ngSwitchCase="3">Documentos Pendientes</span>
+            <span *ngSwitchCase="4">Firmar Contrato</span>
+            <span *ngSwitchCase="5">Cobro</span>
+          </div>
+        </td>
+        <td>{{ item.notas | slice: 0:25 }}</td>
+        <td>{{ item.fecha_creacion }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+       <!-- <td>{{ item.asignado }}</td> -->
+
+

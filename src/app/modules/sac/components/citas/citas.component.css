@@ -1,0 +1,54 @@
+
+.font-w {
+  font-weight: 600;
+}
+.tabla{
+  margin: auto;
+  width: 80%;
+}
+.tabla{
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: -3px 7px 11px 2px;
+  max-height: 42%;
+  overflow: auto;
+}
+.table_mod{
+  background-color: #002a51;
+  color: white;
+}
+.obli{
+  color: red;
+}
+
+/* formulario de subida */
+.mn{
+  margin-top: -2rem;
+}
+.sub_t{
+  display: flex;
+  width: max-content;
+  height: 27px;
+  position: relative;
+  color: white;
+  padding: 0 7px;
+  top: -27px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #002a52;
+}
+.formulario{
+  margin: 2rem;
+  width: 70%;
+  border: 1px solid #184883;
+  padding: 5px;
+  border-radius: 20px;
+  height: fit-content;
+}
+.formulario .marco{
+  border: 2px solid #184883;
+  padding: .5rem;
+  border-radius: 14px;
+}
+

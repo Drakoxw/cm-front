@@ -1,3 +1,6 @@
+.form-row{
+  overflow: auto;
+}
 .nav {
   height: 40px;
   color: #d1deec;
