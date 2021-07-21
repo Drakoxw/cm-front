@@ -1,1 +1,139 @@
-<p>cartas works!</p>
+
+<div class="mainP">
+  <div class="head w100">
+    <nav>
+      <ul class="nav nav-tabs">
+        <li class="nav-item" (click)="opcion = 1">
+          <a class="nav-link" [class.active]="opcion==1" aria-current="page" >Lista</a>
+        </li>
+        <li class="nav-item" (click)="opcion = 2">
+          <a class="nav-link" [class.active]="opcion==2" >Registrar Nueva Carta</a>
+        </li>
+        <li class="nav-item" (click)="opcion = 3">
+          <a class="nav-link" [class.active]="opcion==3" >Crear Carta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled"  tabindex="-1">Notas</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="body_doc w100 " *ngIf="opcion == 1">
+    <div class="tabla">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr class="table_mod">
+            <th scope="col">#</th>
+            <th scope="col">Fecha Envio</th>
+            <th scope="col">Ronda de Carta</th>
+            <th scope="col">Buró de Crédito</th>
+            <th scope="col">Tracking</th>
+            <th scope="col">Cuenta Disputadas</th>
+            <th scope="col">Ver Carta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of dataCartas; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.fecha_envio }}</td>
+            <td>Ronda: {{ item.ronda }}</td>
+            <td *ngIf="item.buro == '1'">Equifax</td>
+            <td *ngIf="item.buro == '2'">Experian</td>
+            <td *ngIf="item.buro == '3'">TransUnion</td>
+            <td>{{ item.cuentas }}</td>
+            <td>{{ item.tracking }}</td>
+            <td>{{ item.carta }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="body_doc w100 " *ngIf="opcion == 2">
+    <div class="formulario">
+      <div class="marco">
+        <h5 class="sub_t">Nuevo Registro</h5>
+        <form #F_H_C>
+          <div class="row g-3 p-2 mn" >
+
+        <div class="col-auto">
+          <label for="fecha_envio" class="font-w">Fecha de Envio</label>
+          <input type="date" name="fecha_envio" class="form-control" [(ngModel)]="fecha_envio" #fecha_envioI="ngModel" />
+        </div>
+
+        <div class="col-auto">
+          <label for="buro" class="font-w">Buró</label>
+          <select id="buro" name="buro" class="form-control" maxlength="1" [(ngModel)]="buro" #buroI="ngModel">
+            <option value="1" name="buro">Equifax</option>
+            <option value="2" name="buro">Experian</option>
+            <option value="3" name="buro">TransUnion</option>
+          </select>
+        </div>
+
+        <div class="col-auto">
+          <label for="ronda" class="font-w">Ronda</label>
+          <select id="ronda" name="ronda" class="form-control" maxlength="1" [(ngModel)]="ronda" #rondaI="ngModel">
+            <option value="1" name="ronda">1ra Ronda</option>
+            <option value="2" name="ronda">2ra Ronda</option>
+            <option value="3" name="ronda">3ra Ronda</option>
+            <option value="4" name="ronda">4ra Ronda</option>
+            <option value="5" name="ronda">5ra Ronda</option>
+            <option value="6" name="ronda">6ra Ronda</option>
+            <option value="7" name="ronda">7ra Ronda</option>
+            <option value="8" name="ronda">8ra Ronda</option>
+            <option value="9" name="ronda">9ra Ronda</option>
+            <option value="10" name="ronda">10ra Ronda</option>
+            <option value="11" name="ronda">11ra Ronda</option>
+            <option value="12" name="ronda">12ra Ronda</option>
+          </select>
+        </div>
+
+        <div class="col-auto">
+          <label for="cuentas" class="font-w">Cuenta Disputada</label>
+          <input type="text" class="form-control" name="cuentas" maxlength="20" [(ngModel)]="cuentas" #cuentasI="ngModel" />
+        </div>
+
+        <div class="col-auto">
+          <label for="tracking" class="font-w">Tracking</label>
+          <input type="text" class="form-control" name="tracking" maxlength="20" [(ngModel)]="tracking" #trackingI="ngModel" />
+        </div>
+
+        <div class="col-auto">
+          <label for="carta" class="font-w">Subir Carta</label>
+          <div class="{{ classInputMod }}">
+            <input type="file" id="cartas" (change)="checkDocumento($event)" class="input-file" value="" />
+            <span>...</span>
+          </div>
+        </div>
+
+        <div class="col-auto">
+          <label class="font-w d-block">Guardar</label>
+          <button type="button" class="btn btn-success" style="border: solid 3px darkgreen" [disabled]="!guardar" (click)="addCarta()">
+            Subir Documentación
+          </button>
+        </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="visualDoc">
+      <h3 class="vistaP" >Vista Previa</h3>
+      <div class="img">
+        <img src={{obj}} alt="">
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="body_doc w100 " *ngIf="opcion == 3">
+
+  </div>
+
+</div>
+
+
+
+
+

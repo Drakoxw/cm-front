@@ -22,8 +22,6 @@ export class CitasComponent implements OnInit {
   motivo_cita: string;
   nota_cita: string;
 
-
-
   constructor(private timer: MicroTimeService,
               private route: ActivatedRoute,
               private httpSer: HttpService)

@@ -84,7 +84,7 @@ export class HttpSegundarioService {
     data: RespReporteCred
   }>{
     const res = { error: false, msg: '', data: null };
-    return this.http.get<RespReporteCred>(`${API_ROUTES.DOCUMENTS}${id}`)
+    return this.http.get<RespReporteCred>(`${API_ROUTES.CREDIT}${id}`)
     .pipe(
       map(r => {
         res.data = r;
@@ -105,7 +105,7 @@ export class HttpSegundarioService {
     data: RespPost
   }>{
     const res = { error: false, msg: '', data: null };
-    return this.http.post<RespPost>(`${API_ROUTES.DOCUMENTS}${id}`, data)
+    return this.http.post<RespPost>(`${API_ROUTES.CREDIT}${id}`, data)
     .pipe(
       map(r => {
         res.data = r;
@@ -303,7 +303,7 @@ export class HttpSegundarioService {
     );
   }
 
-  postCartas(id: string, formCartas: RespCart): Observable<{
+  postCartas(id: string, formCartas:Partial<RespCart>): Observable<{
     error: boolean,
     msg: string,
     data: RespPost

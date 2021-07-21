@@ -1,1 +1,92 @@
-<p>historial-crediticio works!</p>
+
+
+
+<div class="formulario">
+  <div class="marco">
+    <h5 class="sub_t">Nuevo Registro</h5>
+    <form #F_H_C>
+      <div class="row g-3 p-2 mn" >
+
+        <div class=" col-auto">
+          <label for="fecha_cliente" class=" font-w">Fecha Cliente</label>
+          <input type="date" name="fecha" class="form-control" [(ngModel)]="fecha" #fechaI="ngModel" />
+        </div>
+
+        <div class=" col-auto">
+          <label for="acredor" class=" font-w">Acredor</label>
+          <input type="text" name="acredor" class="form-control" [(ngModel)]="acreedor" #acredorI="ngModel" />
+        </div>
+
+        <div class=" col-auto">
+          <label for="buro" class=" font-w">Buro de Credito</label>
+          <select id="buro" name="buro" class="form-control" maxlength="1" [(ngModel)]="buro" #buroI="ngModel">
+            <option value="1" name="buro">Equifax</option>
+            <option value="2" name="buro">Experian</option>
+            <option value="3" name="buro">TransUnion</option>
+          </select>
+        </div>
+
+        <div class=" col-auto">
+          <label for="numero_cuenta" class=" font-w">N° Cuenta</label>
+          <input type="text" name="numero_cuenta" class="form-control" [(ngModel)]="numero_cuenta" #numero_cuentaI="ngModel" />
+        </div>
+
+        <div class=" col-auto">
+          <label for="razon" class=" font-w">Razon</label>
+          <input type="text" name="razon" class="form-control" [(ngModel)]="razon" #razonI="ngModel" />
+        </div>
+
+        <div class=" col-auto">
+          <label for="estado" class=" font-w">Estado</label>
+          <select id="estado" name="estado" class="form-control" maxlength="1" [(ngModel)]="estado" #estadoI="ngModel">
+            <option value="1" name="estado">Positivo</option>
+            <option value="0" name="estado">Negativo</option>
+          </select>
+        </div>
+
+        <div class=" col-auto">
+          <label for="cobro" class=" font-w">Reporte Credito</label>
+          <button class="btn btn-primary btn-small btn-block form-control" (click)="agregarReporte()">
+            Add...
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="tabla">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr class="table_mod">
+        <th scope="col">Fecha</th>
+        <th scope="col">Acredor</th>
+        <th scope="col">Buró de Crédito</th>
+        <th scope="col">N° Cuenta</th>
+        <th scope="col">Razón</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of dataHistorial; index as i">
+        <td>{{ item.fecha }}</td>
+        <td>{{ item.acreedor }}</td>
+        <td *ngIf="item.buro == '1'">Equifax</td>
+        <td *ngIf="item.buro == '2'">TransUnion</td>
+        <td *ngIf="item.buro == '3'">Experian</td>
+        <td>{{ item.cuenta }}</td>
+        <td>{{ item.razon }}</td>
+        <td *ngIf="item.estado == '1'">Positivo</td>
+        <td *ngIf="item.estado == '0'">Negativo</td>
+        <td>
+          <button type="button" class="btn btn-warning">Editar</button>
+          <button type="button" class="btn btn-danger ms-3">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

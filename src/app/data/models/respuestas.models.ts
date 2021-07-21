@@ -70,7 +70,7 @@ export interface RespReporteCred {
   fecha: string,
   razon: string,
   numero_cuenta: string,
-  carta_acredor: string,
+  carta_acreedor: string,
 }
 
 export interface RespPagos {
