@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { RespCitas } from 'src/app/data/models/respuestas.models';
 import { HttpService } from 'src/app/data/services/http.service';
 import { MicroTimeService } from 'src/app/data/services/micro-time.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-citas',
@@ -14,17 +15,12 @@ export class CitasComponent implements OnInit {
   hoy: string;
   idCliente: string;
 
-
-
   // data
   fecha_cita: string;
   hora_cita: string;
-  asignado: string;
   estado_cita: string = '1';
-  nombre: string;
   motivo_cita: string;
   nota_cita: string;
-  id_asignado: string;
 
 
 
@@ -54,8 +50,33 @@ export class CitasComponent implements OnInit {
   }
 
 
+  agregarCita(){
+    const id = this.idCliente
+    let data: Partial<RespCitas> = {
+      id_asignado: '0',
+      fechahora: `${this.fecha_cita} ${this.hora_cita}`,
+      motivo: this.motivo_cita,
+      notas: this.nota_cita,
+      estado: '1',
+    };
+    this.httpSer.postCita(id, data).subscribe( r => {
+      if (!r.error) {
+        Swal.fire({
+          title: 'Enviada',
+          icon: 'success',
+          text: 'Cita creada correctamente!',
+          timer: 1500
+        });
+      } else {
+        Swal.fire({
+          title: 'ERROR!',
+          icon: 'warning',
+          text: 'Cita no guardada!',
+          timer: 2300
+        });
+      }
+    })
+  }
 
-  call(item){}
-  agregarCita(){}
 
 }

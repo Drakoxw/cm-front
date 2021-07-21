@@ -61,23 +61,8 @@
         </div>
 
         <div class="col-auto">
-          <label for="nota_cita" class="font-w">Nota-Comentario <span class="obli">*</span>
-          </label>
-          <input type="text" name="nota_cita" class="form-control" maxlength="500" pattern="([a-zA-Z0-9¡¿!.,: ;\?]{1,500})"
-            [(ngModel)]="nota_cita" #nota_citaI="ngModel" />
-          <div class="errores" *ngIf="nota_citaI.invalid && nota_citaI.dirty">
-            <div *ngIf="nota_citaI.errors.pattern">
-              <small>Use solo <b>caracteres</b> comunes</small>
-            </div>
-            <div *ngIf="nota_citaI.errors.required">
-              <small>Campo es Obligatorio</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-auto">
           <label for="cobro" class="font-w">Agendar Cita</label>
-          <button class="btn btn-primary btn-small btn-block" (click)="agregarCita()">
+          <button class="btn btn-primary btn-small btn-block form-control" (click)="agregarCita()">
             Add...
           </button>
         </div>
